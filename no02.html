@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's New — Nevron Platform · Nº 02</title>
+<style>
+  :root {
+    --ground: #F4F6FB; --card: #FFFFFF; --ink: #101830; --ink2: #4A5875;
+    --muted: #7C88A5; --line: #DCE3F0;
+    --accent: #0063D7; --accent-text: #0059C2;
+    --accent-soft: rgba(0, 99, 215, 0.08); --accent-tint: #E9F1FC;
+    --green: #1E8A4C; --green-soft: rgba(30, 138, 76, 0.10); --green-tint: #EAF5EE;
+    --amber: #B26E00; --amber-soft: rgba(178, 110, 0, 0.10); --amber-tint: #FBF3E4;
+    --navy: #00012B; --navy-ink: #EAF0FC; --navy-muted: #8E9BC4;
+    --radius: 10px;
+    --sans: "Segoe UI Variable Display", "Segoe UI", "Avenir Next", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #070B22; --card: #0E1432; --ink: #E7ECF8; --ink2: #A6B1CC;
+      --muted: #6E7A99; --line: #26304F;
+      --accent: #3E86E8; --accent-text: #8AB8F8;
+      --accent-soft: rgba(62, 134, 232, 0.14); --accent-tint: #101B44;
+      --green: #33A96B; --green-soft: rgba(51, 169, 107, 0.16); --green-tint: #0D2130;
+      --amber: #BB8628; --amber-soft: rgba(187, 134, 40, 0.16); --amber-tint: #1E1A2E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #070B22; --card: #0E1432; --ink: #E7ECF8; --ink2: #A6B1CC;
+    --muted: #6E7A99; --line: #26304F;
+    --accent: #3E86E8; --accent-text: #8AB8F8;
+    --accent-soft: rgba(62, 134, 232, 0.14); --accent-tint: #101B44;
+    --green: #33A96B; --green-soft: rgba(51, 169, 107, 0.16); --green-tint: #0D2130;
+    --amber: #BB8628; --amber-soft: rgba(187, 134, 40, 0.16); --amber-tint: #1E1A2E;
+  }
+  :root[data-theme="light"] {
+    --ground: #F4F6FB; --card: #FFFFFF; --ink: #101830; --ink2: #4A5875;
+    --muted: #7C88A5; --line: #DCE3F0;
+    --accent: #0063D7; --accent-text: #0059C2;
+    --accent-soft: rgba(0, 99, 215, 0.08); --accent-tint: #E9F1FC;
+    --green: #1E8A4C; --green-soft: rgba(30, 138, 76, 0.10); --green-tint: #EAF5EE;
+    --amber: #B26E00; --amber-soft: rgba(178, 110, 0, 0.10); --amber-tint: #FBF3E4;
+  }
+
+  body { background: var(--ground); color: var(--ink); font-family: var(--sans);
+         font-size: 16px; line-height: 1.6; margin: 0; }
+  a { color: var(--accent-text); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  .masthead {
+    background: var(--navy);
+    background-image: radial-gradient(1100px 420px at 82% -8%, rgba(0, 99, 215, 0.38), transparent 68%),
+                      radial-gradient(700px 320px at 8% 118%, rgba(0, 99, 215, 0.20), transparent 70%);
+    color: var(--navy-ink); padding: 52px 24px 0;
+  }
+  .mast-inner { max-width: 1040px; margin: 0 auto; }
+  .mast-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--navy-muted); border-bottom: 1px solid rgba(142, 155, 196, 0.28); padding-bottom: 14px; }
+  .mast-main { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding: 40px 0 8px; flex-wrap: wrap; }
+  .mast-main h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.02; letter-spacing: -0.025em;
+    font-weight: 750; margin: 0 0 18px; text-wrap: balance; }
+  .mast-sub { max-width: 46ch; margin: 0; color: #C0CBE8; font-size: 17px; }
+  .mast-sub strong { color: #FFFFFF; font-weight: 650; }
+  .mast-no { font-family: var(--mono); font-size: clamp(72px, 11vw, 128px); line-height: 0.9; font-weight: 700;
+    color: transparent; -webkit-text-stroke: 1.5px rgba(142, 155, 196, 0.55); user-select: none; flex-shrink: 0; }
+  .mast-kpis { display: flex; gap: 0; flex-wrap: wrap; border-top: 1px solid rgba(142, 155, 196, 0.28); margin-top: 30px; }
+  .mast-kpi { padding: 18px 36px 22px 0; }
+  .mast-kpi + .mast-kpi { padding-left: 36px; border-left: 1px solid rgba(142, 155, 196, 0.22); }
+  .mast-kpi b { display: block; font-size: 30px; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: #FFFFFF; }
+  .mast-kpi span { font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy-muted); }
+
+  .page { max-width: 1040px; margin: 0 auto; padding: 20px 24px 72px; }
+  .section { margin-top: 56px; }
+
+  .part-band {
+    margin-top: 72px;
+    background: var(--navy);
+    background-image: radial-gradient(700px 260px at 88% -30%, rgba(0, 99, 215, 0.42), transparent 70%);
+    color: var(--navy-ink); border-radius: var(--radius);
+    padding: 34px 36px 32px;
+    box-shadow: 0 14px 34px -22px rgba(0, 10, 60, 0.55);
+  }
+  .part-band .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #6E9FE8; margin-bottom: 10px; display: flex; align-items: center; gap: 14px; }
+  .part-band .kicker::after { content: ""; flex: 1; height: 1px; background: rgba(142, 155, 196, 0.35); }
+  .part-band h2 { font-size: clamp(26px, 3.6vw, 34px); font-weight: 750; letter-spacing: -0.02em;
+    margin: 0 0 6px; color: #FFFFFF; text-wrap: balance; }
+  .part-band .dates { font-family: var(--mono); font-size: 13px; color: var(--navy-muted); margin-bottom: 0; }
+  .part-band .lead { color: #C0CBE8; font-size: 15.5px; margin: 14px 0 0; max-width: 78ch; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .sec-head .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent-text); white-space: nowrap; }
+  .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+  .section h2 { font-size: 27px; font-weight: 720; letter-spacing: -0.015em; margin: 6px 0 6px; text-wrap: balance; }
+  .sec-note { color: var(--ink2); margin: 0 0 22px; max-width: 72ch; }
+
+  .hero-card {
+    background: linear-gradient(135deg, var(--accent-tint) 0%, var(--card) 78%);
+    border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius);
+    padding: 30px 32px; margin-top: 22px;
+    display: grid; grid-template-columns: 1.35fr 1fr; gap: 32px;
+    box-shadow: 0 10px 28px -18px rgba(0, 30, 90, 0.28);
+  }
+  .hero-card h3 { font-size: 23px; font-weight: 720; letter-spacing: -0.01em; margin: 10px 0 12px; text-wrap: balance; }
+  .hero-card p { color: var(--ink2); margin: 0 0 14px; }
+  .hero-side { border-left: 1px solid var(--line); padding-left: 28px; align-self: center; }
+  .hero-side ul { list-style: none; margin: 0; padding: 0; }
+  .hero-side li { padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 14.5px; color: var(--ink2); display: flex; gap: 10px; }
+  .hero-side li:last-child { border-bottom: 0; }
+  .hero-side li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px 24px 18px; display: flex; flex-direction: column; gap: 8px; }
+  .card h3 { font-size: 17.5px; font-weight: 680; letter-spacing: -0.005em; margin: 2px 0 0; text-wrap: balance; }
+  .card p { color: var(--ink2); font-size: 14.5px; margin: 0; flex: 1; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+  .chip.surface { color: var(--accent-text); border-color: transparent; background: var(--accent-soft); }
+  .chip.ready   { color: var(--green); border-color: transparent; background: var(--green-soft); }
+  .chip.qa      { color: var(--amber); border-color: transparent; background: var(--amber-soft); }
+  .refs { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .ref { font-family: var(--mono); font-size: 11.5px; padding: 3px 9px; border-radius: 6px;
+    background: var(--accent-soft); color: var(--accent-text); }
+  .ref:hover { text-decoration: none; filter: brightness(0.92); }
+  .more { font-family: var(--sans); font-size: 12.5px; font-weight: 650; letter-spacing: 0.01em;
+    background: var(--accent); color: #FFFFFF; border: 0; border-radius: 999px;
+    padding: 6px 15px; cursor: pointer; margin-right: 4px; transition: filter 0.15s; }
+  .more:hover { filter: brightness(1.12); }
+  .more::after { content: " \2192"; }
+
+  .fixes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 20px; }
+  .fix { display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .fix::before { content: "\2713"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .fix div { font-size: 14.5px; color: var(--ink2); }
+  .fix b { color: var(--ink); font-weight: 620; }
+  .fix .ref { margin-left: 6px; white-space: nowrap; }
+
+  .pipe { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 22px; }
+  .pipe-col { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+  .pipe-col.col-ready { background: var(--green-tint); border-top: 3px solid var(--green); }
+  .pipe-col.col-qa    { background: var(--amber-tint); border-top: 3px solid var(--amber); }
+  .pipe-col.col-dev   { background: var(--accent-tint); border-top: 3px solid var(--accent); }
+  .pipe-col h3 { display: flex; align-items: center; gap: 9px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin: 0 0 4px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .dot.g { background: var(--green); } .dot.a { background: var(--amber); } .dot.b { background: var(--accent); }
+  .pipe-col .cnt { font-family: var(--mono); color: var(--muted); font-weight: 400; margin-left: auto; font-size: 12px; }
+  .pipe-col ul { list-style: none; margin: 10px 0 0; padding: 0; }
+  .pipe-col li { padding: 9px 0; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink2); line-height: 1.45; }
+  .pipe-col li b { color: var(--ink); font-weight: 620; }
+
+  .numbers { display: grid; grid-template-columns: 300px 1fr; gap: 16px; margin-top: 22px; }
+  .stat-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; }
+  .stat { background: var(--accent-tint); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px 14px; }
+  .stat b { display: block; font-size: 27px; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .chart-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; }
+  .chart-card h3 { font-size: 14px; font-weight: 680; margin: 0 0 2px; }
+  .chart-card .sub { font-size: 12.5px; color: var(--muted); margin: 0 0 16px; }
+  .bar-row { display: grid; grid-template-columns: 110px 1fr 56px; align-items: center; gap: 12px; padding: 5px 0; }
+  .bar-label { font-size: 13px; color: var(--ink2); }
+  .bar-track { height: 16px; }
+  .bar { height: 16px; background: var(--accent); border-radius: 0 4px 4px 0; min-width: 3px; width: var(--w); transition: filter 0.15s; }
+  .bar-row:hover .bar { filter: brightness(1.15); }
+  .bar-val { font-family: var(--mono); font-size: 12px; color: var(--ink2); text-align: right; font-variant-numeric: tabular-nums; }
+  .chart-card details { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+  .chart-card summary { cursor: pointer; }
+  .chart-card table { border-collapse: collapse; margin-top: 8px; width: 100%; }
+  .chart-card th, .chart-card td { text-align: left; padding: 4px 12px 4px 0; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+
+  .bug-line { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 14px; padding: 15px 20px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); font-size: 14px; color: var(--ink2); }
+  .bug-line b { font-variant-numeric: tabular-nums; color: var(--ink); }
+
+  .foot { margin-top: 64px; border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); font-size: 13px; }
+  .foot p { max-width: 84ch; margin: 0 0 8px; }
+  .draft-note { margin-top: 40px; padding: 16px 20px; border-radius: var(--radius);
+    background: var(--accent-tint); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    font-size: 14px; color: var(--ink2); }
+  .draft-note b { color: var(--ink); }
+
+  #tip { position: fixed; pointer-events: none; z-index: 10; display: none;
+    background: var(--ink); color: var(--ground); font-family: var(--mono); font-size: 12px;
+    padding: 6px 10px; border-radius: 6px; white-space: nowrap; }
+
+  dialog.feature { border: 0; border-radius: 14px; padding: 0;
+    width: min(680px, calc(100vw - 40px)); max-height: min(86vh, 900px);
+    background: var(--card); color: var(--ink);
+    box-shadow: 0 24px 70px -20px rgba(2, 8, 40, 0.55); }
+  dialog.feature::backdrop { background: rgba(3, 6, 28, 0.55); backdrop-filter: blur(3px); }
+  .dlg-head { position: sticky; top: 0;
+    background: linear-gradient(135deg, var(--accent-tint), var(--card));
+    border-bottom: 1px solid var(--line); padding: 22px 26px 16px;
+    display: flex; align-items: flex-start; gap: 16px; }
+  .dlg-head .tags { margin-bottom: 8px; }
+  .dlg-head h3 { font-size: 21px; font-weight: 720; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+  .dlg-close { margin-left: auto; flex-shrink: 0; background: var(--card); border: 1px solid var(--line);
+    border-radius: 50%; width: 34px; height: 34px; font-size: 16px; line-height: 1; color: var(--ink2); cursor: pointer; }
+  .dlg-close:hover { color: var(--ink); }
+  .dlg-body { padding: 10px 26px 24px; }
+  .dlg-block { margin-top: 18px; }
+  .dlg-block .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent-text); display: block; margin-bottom: 6px; }
+  .dlg-block p { margin: 0; color: var(--ink2); font-size: 15px; }
+  .who { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .who li { display: flex; gap: 12px; align-items: baseline; font-size: 14.5px; color: var(--ink2); }
+  .who .aud { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px; flex-shrink: 0; min-width: 84px; text-align: center; }
+  .aud.guest { background: var(--accent-soft); color: var(--accent-text); }
+  .aud.staff { background: var(--green-soft); color: var(--green); }
+  .aud.nevron { background: var(--amber-soft); color: var(--amber); }
+  .dlg-refs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+  @media (max-width: 860px) {
+    .grid, .fixes, .numbers, .stat-stack { grid-template-columns: 1fr; }
+    .pipe { grid-template-columns: 1fr; }
+    .hero-card { grid-template-columns: 1fr; }
+    .hero-side { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 18px; }
+    .mast-no { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="mast-inner">
+    <div class="mast-top">
+      <span>Nevron Platform · Team Digest</span>
+      <span>Every second Friday</span>
+    </div>
+    <div class="mast-main">
+      <div>
+        <h1>What's new<br>on the platform</h1>
+        <p class="mast-sub">Everything the team shipped between <strong>10 July</strong> and <strong>24 July 2026</strong> — what it does, who it helps, and what’s coming next. In plain language.</p>
+      </div>
+      <div class="mast-no" aria-hidden="true">Nº02</div>
+    </div>
+    <div class="mast-kpis"><div class="mast-kpi"><b>50</b><span>updates delivered</span></div><div class="mast-kpi"><b>19</b><span>new features</span></div><div class="mast-kpi"><b>25</b><span>fixes</span></div><div class="mast-kpi"><b>5</b><span>platform areas touched</span></div></div>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">The big story</span><div class="rule"></div></div>
+    <div class="hero-card">
+      <div>
+        <div class="tags"><span class="chip surface">Guest app</span><span class="chip qa">In QA</span></div>
+        <h3>Guests can now watch series in the guest app</h3>
+        <p>Movies got a sibling. A brand-new <b>Series</b> module landed this cycle: hotels curate shows, and guests browse them on a redesigned browse screen, open a series page with its seasons and episode lists, and play episodes right inside the guest app — in the hotel's branding, on the guest's own device.</p><p>The app <b>remembers where each guest stopped</b>, so an episode paused at bedtime resumes the next evening. Every episode also has its own direct link, which means a QR code on a flyer or a promo banner can jump straight into a specific episode. And following our analytics-from-day-one rule, the module shipped with its own dashboard card — plays, watch progress, top titles — so hotels can see what's actually being watched.</p>
+        <div class="refs"><button class="more" data-f="series">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/513">PR #513</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12576278431">Monday card</a></div>
+      </div>
+      <div class="hero-side">
+        <ul><li>Browse screen, series detail with seasons &amp; episode lists, in-app player</li><li>Resume watching — progress saved per guest, per episode</li><li>Every episode is directly linkable — QR codes and promos can deep-link into it</li><li>Watch analytics from day one <span class="chip qa">In QA</span></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Guest app</span><div class="rule"></div></div>
+    <h2>What guests will notice</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">Guest app</span></div>
+        <h3>Send a photo to reception — chat learned attachments</h3>
+        <p>All three chat surfaces — guest chat, the website visitor chat, and the staff inbox — can now send <b>images and files</b>. On the phone, the paperclip opens a small menu: camera, gallery, or file. Photos land as thumbnails in the conversation on both ends.</p>
+        <div class="refs"><button class="more" data-f="chat-attachments">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/501">PR #501</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12488811977">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Guest app</span></div>
+        <h3>The assistant got a new face</h3>
+        <p>The static chat bubble was replaced by a <b>living, softly animated orb</b> that takes on each hotel's brand colors, and the chat itself now opens as a smooth slide-up panel. A batch of layout fixes tightened the whole experience.</p>
+        <div class="refs"><button class="more" data-f="chat-orb">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/494">PR #494</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/512">PR #512</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12277011294">Monday card</a></div>
+      </article></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">In-room TV</span><div class="rule"></div></div>
+    <h2>The TV keeps growing up</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">In-room TV</span></div>
+        <h3>Order on the TV, pay on your phone</h3>
+        <p>TV checkout now shows a <b>QR code</b>: the guest scans it, the hotel's payment page opens on their phone, they pay by card there, and the TV confirms the order is paid. The last missing step of TV ordering — payment — no longer needs a call to reception.</p>
+        <div class="refs"><button class="more" data-f="tv-pay-phone">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/467">PR #467</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/470">PR #470</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12337823255">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">In-room TV</span></div>
+        <h3>Browsing the TV feels calm and quick</h3>
+        <p>Eight rounds of tuning went into how the TV catalogue moves: rows now slide smoothly, backgrounds crossfade at just the right moment, images stopped flickering, and channel-heavy hotels get preloading so screens appear faster.</p>
+        <div class="refs"><button class="more" data-f="tv-motion">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/519">PR #519</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/495">PR #495</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12562766000">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">In-room TV</span></div>
+        <h3>The hotel&#x27;s own photos take over the TV screens</h3>
+        <p>A module's cover photo now becomes the <b>full-screen background</b> of its TV screen, tiles show a custom image before falling back to an icon, and the Apps screen got its own background image. Screens carry the hotel's photography instead of generic defaults.</p>
+        <div class="refs"><button class="more" data-f="tv-covers">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/486">PR #486</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/471">PR #471</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12574625559">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Guest app</span><span class="chip qa">In QA</span></div>
+        <h3>Menus finally follow the guest&#x27;s language</h3>
+        <p>When a guest switched the TV or app to Slovenian, the buttons translated but the <b>content didn't</b> — item names and descriptions stayed English. Content translations now come through on both surfaces, and the guest's language choice is remembered for their stay and their room's TV.</p>
+        <div class="refs"><button class="more" data-f="content-translations">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/476">PR #476</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12515484257">Monday card</a></div>
+      </article></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">New frontiers</span><div class="rule"></div></div>
+    <h2>Two new apps are taking shape</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">Staff app</span><span class="chip dev">In development</span></div>
+        <h3>A third app is born — for the hotel crew</h3>
+        <p>Work started on a dedicated <b>Staff App</b> for housekeeping and maintenance teams. This cycle delivered the app's foundation plus the engine behind it: staff tasks with checklists, shifts and time targets, a room-by-room housekeeping status board, and inspection checklists.</p>
+        <div class="refs"><button class="more" data-f="staff-app">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/489">PR #489</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/502">PR #502</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/511">PR #511</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12559887394">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Guest app</span><span class="chip dev">In development</span></div>
+        <h3>One account, all your stays — groundwork for the store app</h3>
+        <p>The first two building blocks of the downloadable (App Store / Google Play) app landed: a <b>global guest account</b> that lives above any single hotel, and a <b>My Stays</b> screen that collects a guest's stays across different hotels with safe switching between them.</p>
+        <div class="refs"><button class="more" data-f="downloadable-app">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/509">PR #509</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12463791848">Monday card</a></div>
+      </article></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Admin panel</span><div class="rule"></div></div>
+    <h2>For the people running the hotel</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">Admin</span><span class="chip qa">In QA</span></div>
+        <h3>One menu, many hotels — shared catalogues</h3>
+        <p>A hotel group can now share a catalogue across properties: the owner hotel publishes it with an invite code, each subscribing hotel opts in <b>item by item</b> and sets its own prices and margins, and content updates flow from the owner automatically. Sales are split into a proper ledger.</p>
+        <div class="refs"><button class="more" data-f="shared-catalogues">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/488">PR #488</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12515273247">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Admin</span><span class="chip surface">Guest app</span></div>
+        <h3>Reservations can require a deposit</h3>
+        <p>Time-slot bookings — a table, a treatment — can now require <b>confirmation and a per-item deposit</b>, paid by card or charged to the room. Payment receipts are itemised and delivered through the Email Center, and admins control the payment window.</p>
+        <div class="refs"><button class="more" data-f="reservation-deposits">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/492">PR #492</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/478">PR #478</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12516427465">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Admin</span></div>
+        <h3>Know when the hotel&#x27;s booking system changes something</h3>
+        <p>When the hotel's PMS renames a room, moves a reservation, or deletes something the platform depends on, admins now get <b>tiered alerts</b> instead of silent surprises — with a review queue for changes that need a human decision and an audit trail of everything.</p>
+        <div class="refs"><button class="more" data-f="pms-alerts">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/477">PR #477</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12277493299">Monday card</a></div>
+      </article></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Under the hood</span><div class="rule"></div></div>
+    <h2>Invisible, but you&#x27;ll feel it</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">Platform</span></div>
+        <h3>Outage-proofing the image pipeline</h3>
+        <p>A run of production outages was traced to images: when a small preview was missing, the server streamed the huge original instead and ran itself out of memory. That's fixed — and images across the guest app, admin panel and TV now come from a fast delivery network, with every hotel-creation path stocking it correctly.</p>
+        <div class="refs"><button class="more" data-f="media-pipeline">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/472">PR #472</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/479">PR #479</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/483">PR #483</a><a class="ref" href="https://nevron.monday.com/boards/18410126133/pulses/12548122185">Monday card</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Platform</span></div>
+        <h3>A near-miss became a platform-wide security rule</h3>
+        <p>During review of the TV pay-by-phone feature, a subtle flaw was caught <b>before merge</b>: a payment code from one hotel could, under the right timing, have been replayed at a different hotel. It was fixed the same day — and generalized into a written rule every future feature is checked against.</p>
+        <div class="refs"><button class="more" data-f="rule9">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/467">PR #467</a></div>
+      </article></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Also fixed</span><div class="rule"></div></div>
+    <h2>Smaller fixes worth knowing about</h2>
+    <div class="fixes"><div class="fix"><div><b>Same-day arrivals are recognized immediately</b> — a guest checking in today no longer waits for the next sync to appear as "in house". <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/475">#475</a></div></div><div class="fix"><div><b>Stay length counts hotel nights</b> instead of 24-hour blocks, so a two-night stay reads as two nights everywhere. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/473">#473</a></div></div><div class="fix"><div><b>WiFi settings live in one place now</b> — network name and password moved into the WiFi module instead of being split across two screens. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/514">#514</a></div></div><div class="fix"><div><b>No more false "No items found" flash</b> when a catalogue page opens for the first time. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/484">#484</a></div></div><div class="fix"><div><b>Light-colored icons are visible again</b> in admin lists and forms — they sit on a subtle gray backdrop instead of vanishing into white. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/518">#518</a></div></div><div class="fix"><div><b>Catalogue item pages keep the order button in reach</b> — the action bar pins under the photo instead of scrolling away. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/517">#517</a></div></div><div class="fix"><div><b>Companion screens get in-app notifications</b>, along with login-session and token fixes. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/474">#474</a></div></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Coming next</span><div class="rule"></div></div>
+    <h2>What's in the pipeline</h2>
+    <p class="sec-note">A snapshot of the board today — not everything here lands in the next edition.</p>
+    <div class="pipe">
+      <div class="pipe-col col-ready">
+        <h3><span class="dot g"></span>Ready to deploy<span class="cnt">1</span></h3>
+        <ul><li><b>Tenant deletion cleanup</b> — deleting a hotel no longer leaves live leftovers behind (ghost syncs, storage collisions)</li></ul>
+      </div>
+      <div class="pipe-col col-qa">
+        <h3><span class="dot a"></span>In QA<span class="cnt">7</span></h3>
+        <ul><li><b>Series in the guest app</b> — this edition's hero</li><li><b>Room Care on the TV</b> — request cleaning &amp; services from the room TV</li><li><b>Shared catalogues</b> — one menu across a hotel group</li><li><b>TV Welcome Screens</b> — room-type targeting with live-preview composer</li><li><b>Menus in the guest's language</b> — content translations on TV &amp; app</li><li><b>Module images cleanup</b> — cover photos as TV backgrounds</li><li><b>Chat UI &amp; WiFi consolidation fixes</b></li></ul>
+      </div>
+      <div class="pipe-col col-dev">
+        <h3><span class="dot b"></span>In development<span class="cnt">8</span></h3>
+        <ul><li><b>Nevron Intelligence 1.0</b></li><li><b>Bentral integration</b> — incl. one-click guest login from the pre-arrival email</li><li><b>Staff App wave 2</b> — the crew-facing screens on the new engine</li><li><b>Downloadable app</b> — next work packages toward the app stores</li><li><b>Booking lifecycle</b> — guest cancellations &amp; manager-reviewed refunds</li><li><b>Notifications center</b></li><li><b>MEWS partner certification</b></li><li><b>App-wide speed optimization</b></li></ul>
+      </div></div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">The numbers</span><div class="rule"></div></div>
+    <h2>This cycle in figures</h2>
+    <div class="numbers">
+      <div class="stat-stack"><div class="stat"><b>50</b><span>PRs merged</span></div><div class="stat"><b>109</b><span>commits</span></div><div class="stat"><b>183k</b><span>lines touched</span></div><div class="stat"><b>5</b><span>contributors</span></div></div>
+      <div class="chart-card">
+        <h3>Where the work happened</h3>
+        <p class="sub">Lines of code touched per platform area, 10 – 24 Jul</p>
+        <div class="bar-row" data-tip="116,106 lines · 735 files"><span class="bar-label">Backend</span><div class="bar-track"><div class="bar" style="--w:100%"></div></div><span class="bar-val">116.1k</span></div><div class="bar-row" data-tip="25,015 lines · 290 files"><span class="bar-label">Guest app</span><div class="bar-track"><div class="bar" style="--w:21.5%"></div></div><span class="bar-val">25.0k</span></div><div class="bar-row" data-tip="14,820 lines · 219 files"><span class="bar-label">Admin panel</span><div class="bar-track"><div class="bar" style="--w:12.8%"></div></div><span class="bar-val">14.8k</span></div><div class="bar-row" data-tip="10,728 lines · 155 files"><span class="bar-label">In-room TV</span><div class="bar-track"><div class="bar" style="--w:9.2%"></div></div><span class="bar-val">10.7k</span></div><div class="bar-row" data-tip="619 lines · 7 files"><span class="bar-label">PMS Hub</span><div class="bar-track"><div class="bar" style="--w:0.5%"></div></div><span class="bar-val">0.6k</span></div>
+        <details>
+          <summary>View as table</summary>
+          <table><tr><th>Area</th><th>Lines touched</th><th>Files</th></tr><tr><td>Backend</td><td>116,106</td><td>735</td></tr><tr><td>Guest app</td><td>25,015</td><td>290</td></tr><tr><td>Admin panel</td><td>14,820</td><td>219</td></tr><tr><td>In-room TV</td><td>10,728</td><td>155</td></tr><tr><td>PMS Hub</td><td>619</td><td>7</td></tr></table>
+        </details>
+      </div>
+    </div>
+    <div class="bug-line"><span>🐛 Bugs reported this cycle: <b>19</b></span><span>Marked done on the board: <b>1</b> — most finished fixes are parked in QA until the next deploy</span><span>Open backlog: <b>74</b></span><span>Top contributor by volume: <b>Aljaž Gračnar</b> (40 PRs)</span></div>
+  </section>
+
+  <div class="draft-note"><b>Generated automatically.</b> This edition was produced by the bi-weekly digest pipeline. Want something changed, added, or explained differently? Open Claude Code and say so — the edition will be regenerated.</div>
+
+  <footer class="foot">
+    <p><b>How this report is made:</b> merged pull requests and commits from the platform repository, plus the Dev and Bugs boards on Monday, gathered for the 14-day window and rewritten in plain language. “Lines touched” measures activity, not app size (the new Staff App surface isn't broken out in the chart yet). Board numbers are directional — a card updated for an unrelated reason can slip into the window, and cards move to Done only after QA on the deployed build.</p>
+    <p>Nevron Platform Digest · Nº 02 · generated 24 July 2026</p>
+  </footer>
+</main>
+
+<div id="tip"></div>
+
+<dialog class="feature" id="featureDialog" aria-labelledby="dlgTitle">
+  <div class="dlg-head">
+    <div>
+      <div class="tags" id="dlgTags"></div>
+      <h3 id="dlgTitle"></h3>
+    </div>
+    <button class="dlg-close" id="dlgClose" aria-label="Close">✕</button>
+  </div>
+  <div class="dlg-body">
+    <div class="dlg-block"><span class="lbl">How it works</span><p id="dlgHow"></p></div>
+    <div class="dlg-block"><span class="lbl">What it's used for</span><p id="dlgUse"></p></div>
+    <div class="dlg-block"><span class="lbl">Who it helps</span><ul class="who" id="dlgWho"></ul></div>
+    <div class="dlg-refs" id="dlgRefs"></div>
+  </div>
+</dialog>
+
+<script>
+  var FEATURES = {
+  "series": {
+    "title": "Guests can now watch series in the guest app",
+    "tags": [
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The module follows the same structure the team already knows from Movies: a module holds series, each series holds seasons and episodes. The backend got a guest-facing API that serves episode details, playback sources and watch progress; the player reports the guest's position back, which powers \"continue watching\". A separate single-episode endpoint makes every episode addressable by its own link. The screens were then rebuilt to match the approved design and went through a dedicated design-QA polish pass — covers, spacing, episode cards, and the little details.",
+    "use": "In-room entertainment is one of the core things hotels buy the platform for. Hotels that license shows — local productions, kids' content, documentaries about the region — can now offer full series through the guest app, the same place guests already order room service and browse the hotel's services.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "A real watching experience on their own device: browse, play, pause, and pick up where they left off — no extra app, no login beyond their stay."
+      ],
+      [
+        "staff",
+        "Hotel staff",
+        "Series are managed with the same module / category / item tools as every other content type. Nothing new to learn."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "A second entertainment module strengthens the premium content story next to Movies — and the built-in watch analytics prove usage to the hotels paying for it."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #513",
+        "https://github.com/NevronCore/nevron-core/pull/513"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12576278431"
+      ]
+    ]
+  },
+  "chat-attachments": {
+    "title": "Send a photo to reception — chat learned attachments",
+    "tags": [
+      [
+        "surface",
+        "Guest app"
+      ]
+    ],
+    "how": "Attachment support was added across the whole chat stack at once, so a photo sent by a guest shows up in the staff inbox and vice versa. On mobile the paperclip button opens a small menu anchored right next to it — take a photo, pick from the gallery (including several at once), or attach a file. A round of QA feedback was folded in before merge: the emoji panel got a proper close button, and pickers open reliably on the first tap.",
+    "use": "\"The tap is leaking\" becomes a photo instead of a description. A guest snaps the broken fixture, the housekeeping request is unambiguous, and staff can send back a PDF menu, a map, or a picture of the meeting room being offered.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "Show instead of describe — a photo of the problem or the dish they mean, straight in the chat they already have open."
+      ],
+      [
+        "staff",
+        "Hotel staff",
+        "Clearer requests with evidence attached, and the ability to send documents and pictures back without switching to email."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "Closes an obvious gap against every mainstream messenger — one less \"but WhatsApp can do it\" in sales conversations."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #501",
+        "https://github.com/NevronCore/nevron-core/pull/501"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12488811977"
+      ]
+    ]
+  },
+  "chat-orb": {
+    "title": "The assistant got a new face",
+    "tags": [
+      [
+        "surface",
+        "Guest app"
+      ]
+    ],
+    "how": "The new orb is rendered with WebGL — a small animated graphic that breathes and reacts, tinted automatically from the hotel's dashboard theme colors so it matches every brand without any configuration. The chat window opens as a slide-up sheet over the current page instead of a hard screen switch, and a follow-up round fixed the visual glitches QA found in that flow.",
+    "use": "The AI assistant is a premium, high-perceived-value module — the button that opens it should look the part. First impressions of the assistant now start before the first message.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "The assistant feels alive and inviting rather than like a generic help button."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "A visibly polished entry point for the flagship AI module — the thing that gets shown first in every demo."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #494",
+        "https://github.com/NevronCore/nevron-core/pull/494"
+      ],
+      [
+        "PR #512",
+        "https://github.com/NevronCore/nevron-core/pull/512"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12277011294"
+      ]
+    ]
+  },
+  "tv-pay-phone": {
+    "title": "Order on the TV, pay on your phone",
+    "tags": [
+      [
+        "surface",
+        "In-room TV"
+      ]
+    ],
+    "how": "A TV can't take card details, so checkout now mints a short-lived pay link and shows it as a QR code on screen. The guest's phone opens the hotel's payment page, the payment happens there, and the TV updates the moment it lands. If the camera won't cooperate, there's a short typed code as a fallback (an early bug that cut off that code was caught and fixed). Expired codes are swept up automatically, and each code is cryptographically tied to the exact hotel and order it belongs to, so it cannot be reused anywhere else.",
+    "use": "Last cycle the platform got online payments; this cycle they reached the biggest screen in the room. A guest orders a bottle of wine from the couch, scans, pays, done — no phone call, no cash at the door.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "Complete a TV order in one motion with the phone already in their hand."
+      ],
+      [
+        "staff",
+        "Hotel staff",
+        "TV orders arrive pre-paid — fewer disputes and no chasing payment at delivery."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "Completes the IPTV commerce story: the TV is now a full revenue channel, not just a browsing screen."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #467",
+        "https://github.com/NevronCore/nevron-core/pull/467"
+      ],
+      [
+        "PR #470",
+        "https://github.com/NevronCore/nevron-core/pull/470"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12337823255"
+      ]
+    ]
+  },
+  "tv-motion": {
+    "title": "Browsing the TV feels calm and quick",
+    "tags": [
+      [
+        "surface",
+        "In-room TV"
+      ]
+    ],
+    "how": "Hotel TVs run on very weak hardware, so smooth motion is an engineering problem, not a styling choice. The team moved all competing work out of the animation window, pre-builds the next catalogue row and pre-decodes its background before the transition starts, re-decodes images that TV memory quietly evicted during idle, and then retimed the motion (1.25-second row slide, 1.75-second background crossfade) on real devices until it felt right. Hotels with many TV channels additionally get prefetching and startup caching.",
+    "use": "The TV is the most-seen surface of the whole platform — every guest touches it. Smoothness is the difference between \"feels premium\" and \"feels broken\", especially during demos on real hotel hardware.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "Browsing the TV menu feels like a modern streaming device, not a laggy set-top box."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "Demo-proof motion on the weakest supported TVs — the surface prospects judge first."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #519",
+        "https://github.com/NevronCore/nevron-core/pull/519"
+      ],
+      [
+        "PR #495",
+        "https://github.com/NevronCore/nevron-core/pull/495"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12562766000"
+      ]
+    ]
+  },
+  "tv-covers": {
+    "title": "The hotel's own photos take over the TV screens",
+    "tags": [
+      [
+        "surface",
+        "In-room TV"
+      ]
+    ],
+    "how": "The image rules across TV screens were consolidated: the cover photo a hotel sets on a module doubles as that module screen's background, dashboard tiles prefer a custom image and fall back to the icon only when none is set, and the Apps screen accepts its own background. This also fixed a reported bug where an image set by the admin was ignored and a default background showed instead.",
+    "use": "Hotels invest in photography — the pool at dusk, the restaurant plating. Those photos now do the selling on the in-room screens, which is exactly where guests decide whether to book the spa or order dinner.",
+    "who": [
+      [
+        "staff",
+        "Hotel staff",
+        "Set a photo once on the module and the TV picks it up — no separate TV configuration."
+      ],
+      [
+        "guest",
+        "Guests",
+        "Screens that look like the hotel they're standing in, not like software."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #486",
+        "https://github.com/NevronCore/nevron-core/pull/486"
+      ],
+      [
+        "PR #471",
+        "https://github.com/NevronCore/nevron-core/pull/471"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12574625559"
+      ]
+    ]
+  },
+  "content-translations": {
+    "title": "Menus finally follow the guest's language",
+    "tags": [
+      [
+        "surface",
+        "In-room TV"
+      ],
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The screens were asking for content without saying which language the guest wanted, so the platform served the default. The requests now carry the guest's language, translated item names and descriptions come back on the TV and in the guest app, and the chosen language is stored on the stay and on the room's device — so it survives screen changes and restarts instead of resetting to English.",
+    "use": "A German guest browsing the dinner menu should read it in German everywhere — hotels enter those translations, and now they actually reach the guest.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "The whole experience — not just the buttons — appears in their language, and stays that way."
+      ],
+      [
+        "staff",
+        "Hotel staff",
+        "The translation work they put into content is no longer silently wasted."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #476",
+        "https://github.com/NevronCore/nevron-core/pull/476"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12515484257"
+      ]
+    ]
+  },
+  "staff-app": {
+    "title": "A third app is born — for the hotel crew",
+    "tags": [
+      [
+        "surface",
+        "Staff app"
+      ],
+      [
+        "dev",
+        "In development"
+      ]
+    ],
+    "how": "A brand-new app surface entered the codebase alongside the guest app and the admin panel, built on the newest technology stack and anchored by a clickable design mock from Kaja that the implementation is being matched against. Underneath it, the backend grew a staff-operations engine: tasks that move through a real lifecycle, checklist templates with inspections, shift and time-target handling, and a per-room housekeeping status layer with a board view of the whole floor.",
+    "use": "Housekeepers and maintenance staff work on their feet, not at a desk. Today that means paper sheets and radio calls; the Staff App will give them their assigned rooms, their task list, and checklists to tick off — with managers seeing floor status live.",
+    "who": [
+      [
+        "staff",
+        "Hotel crew",
+        "Their own tool at last — clear assignments and checklists on the device in their pocket instead of paper and guesswork."
+      ],
+      [
+        "guest",
+        "Guests",
+        "Indirectly: faster room turnaround and fewer dropped requests as staff work gets tracked."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "An entirely new sellable product line — operations tooling — on top of the existing guest-facing platform."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #489",
+        "https://github.com/NevronCore/nevron-core/pull/489"
+      ],
+      [
+        "PR #502",
+        "https://github.com/NevronCore/nevron-core/pull/502"
+      ],
+      [
+        "PR #511",
+        "https://github.com/NevronCore/nevron-core/pull/511"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12559887394"
+      ]
+    ]
+  },
+  "downloadable-app": {
+    "title": "One account, all your stays — groundwork for the store app",
+    "tags": [
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "dev",
+        "In development"
+      ]
+    ],
+    "how": "Until now the guest app was strictly per-hotel: you logged into one stay at one property. The first work package added a global account a guest signs into once; the second added My Stays — the account gathers that guest's stays across properties, and switching hotels swaps the entire session cleanly so no data from one hotel bleeds into another. This is exactly the plumbing an installable app needs before it can exist in the app stores.",
+    "use": "A returning guest opens the app, sees their upcoming stay waiting, and taps straight in. A hotel group gets one app covering every property, with the guest's history following them.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "No re-registering at every hotel — one account, every stay, one tap to enter."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "The whole app-store strategy — branded hotel apps and a Nevron app — stands on this foundation."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #509",
+        "https://github.com/NevronCore/nevron-core/pull/509"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12463791848"
+      ]
+    ]
+  },
+  "shared-catalogues": {
+    "title": "One menu, many hotels — shared catalogues",
+    "tags": [
+      [
+        "surface",
+        "Admin"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The owning hotel generates an invite code for a catalogue; a subscribing hotel redeems it, chooses which items to carry, and sets its own margins on top. The platform replicates everything — photos, descriptions, translations — into the subscriber and keeps it synchronized when the owner edits, while received items stay read-only so the source of truth is never forked. Every sale records what the guest paid, the owner's share, and the subscriber's commission.",
+    "use": "Chains and partner networks: the flagship's spa menu, a tour operator's excursions, a central room-service menu — maintained once at headquarters, sold at every property with local pricing.",
+    "who": [
+      [
+        "staff",
+        "Hotel staff",
+        "Maintain one catalogue instead of hand-copying it into every property and chasing drift."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "A genuinely chain-level capability — a strong argument for exactly the larger groups the platform wants to win."
+      ],
+      [
+        "guest",
+        "Guests",
+        "Smaller properties in a group can offer the full richness of the flagship's catalogue."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #488",
+        "https://github.com/NevronCore/nevron-core/pull/488"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12515273247"
+      ]
+    ]
+  },
+  "reservation-deposits": {
+    "title": "Reservations can require a deposit",
+    "tags": [
+      [
+        "surface",
+        "Admin"
+      ],
+      [
+        "surface",
+        "Guest app"
+      ]
+    ],
+    "how": "Each bookable item can carry its own deposit fee. When a guest books, the reservation waits for confirmation and payment — card or charge-to-room, per the hotel's configuration — inside a payment window the admin controls; unpaid reservations don't block the slot forever. The receipt that follows lists every line item and is sent through the platform's Email Center like other hotel emails.",
+    "use": "The classic no-show problem: a Saturday-night table or a massage slot held for free costs real money when the guest doesn't appear. A small deposit changes behavior — and the hotel keeps it if they don't show.",
+    "who": [
+      [
+        "staff",
+        "Hotel staff",
+        "Fewer no-shows, deposits already collected, and clean itemised receipts going out automatically."
+      ],
+      [
+        "guest",
+        "Guests",
+        "A clear confirmation with a proper receipt — no surprises at checkout."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "Deepens the payments platform into reservations, the second big revenue flow after ordering."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #492",
+        "https://github.com/NevronCore/nevron-core/pull/492"
+      ],
+      [
+        "PR #478",
+        "https://github.com/NevronCore/nevron-core/pull/478"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12516427465"
+      ]
+    ]
+  },
+  "pms-alerts": {
+    "title": "Know when the hotel's booking system changes something",
+    "tags": [
+      [
+        "surface",
+        "Admin"
+      ]
+    ],
+    "how": "The connector layer that syncs with the hotel's property-management system now classifies every incoming change by how disruptive it is. Routine changes flow through quietly, notable ones raise an admin notification, and structural ones — the kind that used to silently break room assignments — land in a curation queue where an admin reviews and applies them deliberately. Every change is logged, so \"why did this room disappear?\" has an answer.",
+    "use": "The PMS is the hotel's source of truth, and hotels reorganize it without telling anyone. Instead of discovering a broken room mapping when a guest calls, staff see the change the moment it syncs.",
+    "who": [
+      [
+        "staff",
+        "Hotel staff",
+        "No more silent breakage after a PMS-side reorganization — they see what changed and decide what to do."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "Fewer mystery support tickets that end with \"the hotel renamed the room in their PMS\"."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #477",
+        "https://github.com/NevronCore/nevron-core/pull/477"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12277493299"
+      ]
+    ]
+  },
+  "media-pipeline": {
+    "title": "Outage-proofing the image pipeline",
+    "tags": [
+      [
+        "surface",
+        "Platform"
+      ]
+    ],
+    "how": "Three threads of work landed together. The outage fix: a missing thumbnail no longer makes the server stream the full-size original (which is what exhausted memory and caused 502 errors); previews are generated properly and worker limits were tuned. The speed work: images for the guest app, admin panel and TV are served from the public content-delivery network instead of passing through the backend, caches were re-keyed, and the guest app went on a startup diet so first load is lighter. The hygiene work: every way a hotel comes into existence — import, automated scraping, duplication — now stocks the delivery network's storage correctly, and deleting media purges both storage locations.",
+    "use": "This is the foundation of the app-wide speed initiative: every screen on every surface is image-heavy, and the same pipeline that made pages slow was also what took production down.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "Faster screens — and no more evenings where the app simply wasn't reachable."
+      ],
+      [
+        "staff",
+        "Hotel staff",
+        "A snappier admin panel and fewer \"is it down?\" moments to explain to their managers."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "Outages stopped, server load and cost per hotel dropped, and new hotels start life with their media in the right place."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #472",
+        "https://github.com/NevronCore/nevron-core/pull/472"
+      ],
+      [
+        "PR #479",
+        "https://github.com/NevronCore/nevron-core/pull/479"
+      ],
+      [
+        "PR #483",
+        "https://github.com/NevronCore/nevron-core/pull/483"
+      ],
+      [
+        "Monday card",
+        "https://nevron.monday.com/boards/18410126133/pulses/12548122185"
+      ]
+    ]
+  },
+  "rule9": {
+    "title": "A near-miss became a platform-wide security rule",
+    "tags": [
+      [
+        "surface",
+        "Platform"
+      ]
+    ],
+    "how": "Pay links are protected by a cryptographic signature. The first implementation signed only the short code — and because short codes get recycled, the same code eventually means something else at another hotel, where the old signature would still verify. The fix binds every signature to the specific hotel and the specific record it authorizes. The lesson was then codified as tenant-isolation Rule 9 in the platform's engineering rulebook: any derived key, signed token or credential must include the hotel's identity in what it's derived from. Reviews now check for it explicitly.",
+    "use": "Multi-hotel isolation is the platform's most sacred promise. Catching this class of bug at the quality gate — and turning the catch into a permanent rule — is exactly how that promise stays kept as the team ships faster.",
+    "who": [
+      [
+        "nevron",
+        "Nevron",
+        "A whole category of cross-hotel security bugs is now checked for by rule, not by luck."
+      ],
+      [
+        "staff",
+        "Hotel staff",
+        "Their hotel's codes, links and tokens can't be minted or replayed from anywhere else — by design."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #467",
+        "https://github.com/NevronCore/nevron-core/pull/467"
+      ]
+    ]
+  }
+};
+
+  (function () {
+    var dlg = document.getElementById('featureDialog');
+    var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
+    function open(id) {
+      var f = FEATURES[id];
+      if (!f) return;
+      document.getElementById('dlgTitle').textContent = f.title;
+      document.getElementById('dlgHow').textContent = f.how;
+      document.getElementById('dlgUse').textContent = f.use;
+      document.getElementById('dlgTags').innerHTML = f.tags.map(function (t) {
+        return '<span class="chip ' + esc(t[0]) + '">' + esc(t[1]) + '</span>';
+      }).join('');
+      document.getElementById('dlgWho').innerHTML = f.who.map(function (w) {
+        return '<li><span class="aud ' + esc(w[0]) + '">' + esc(w[1]) + '</span><span>' + esc(w[2]) + '</span></li>';
+      }).join('');
+      document.getElementById('dlgRefs').innerHTML = f.refs.map(function (r) {
+        return '<a class="ref" href="' + esc(r[1]) + '" target="_blank" rel="noopener">' + esc(r[0]) + '</a>';
+      }).join('');
+      dlg.showModal();
+    }
+    document.querySelectorAll('.more[data-f]').forEach(function (btn) {
+      btn.addEventListener('click', function () { open(btn.getAttribute('data-f')); });
+    });
+    document.getElementById('dlgClose').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    var tip = document.getElementById('tip');
+    document.querySelectorAll('.bar-row[data-tip]').forEach(function (row) {
+      row.addEventListener('mousemove', function (e) {
+        tip.textContent = row.getAttribute('data-tip');
+        tip.style.display = 'block';
+        tip.style.left = (e.clientX + 14) + 'px';
+        tip.style.top = (e.clientY - 30) + 'px';
+      });
+      row.addEventListener('mouseleave', function () { tip.style.display = 'none'; });
+    });
+  })();
+
+</script>
+</body>
+</html>
