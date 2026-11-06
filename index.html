@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What's New — Nevron Platform · Nº 08</title>
+<title>What's New — Nevron Platform · Nº 09</title>
 <style>
   :root {
     --ground: #F4F6FB; --card: #FFFFFF; --ink: #101830; --ink2: #4A5875;
@@ -230,16 +230,16 @@
   <div class="mast-inner">
     <div class="mast-top">
       <span>Nevron Platform · Team Digest</span>
-      <span>Every second Friday</span>
+      <span>Published 6 November 2026 · Every second Friday</span>
     </div>
     <div class="mast-main">
       <div>
         <h1>What's new<br>on the platform</h1>
-        <p class="mast-sub">Everything the team shipped between <strong>2 October</strong> and <strong>16 October 2026</strong> — what it does, who it helps, and what’s coming next. In plain language.</p>
+        <p class="mast-sub">Everything the team shipped between <strong>16 October</strong> and <strong>6 November 2026</strong> — what it does, who it helps, and what’s coming next. In plain language.</p>
       </div>
-      <div class="mast-no" aria-hidden="true">Nº08</div>
+      <div class="mast-no" aria-hidden="true">Nº09</div>
     </div>
-    <div class="mast-kpis"><div class="mast-kpi"><b>148</b><span>updates delivered</span></div><div class="mast-kpi"><b>52</b><span>new features</span></div><div class="mast-kpi"><b>63</b><span>fixes</span></div><div class="mast-kpi"><b>5</b><span>platform areas touched</span></div></div>
+    <div class="mast-kpis"><div class="mast-kpi"><b>213</b><span>updates delivered</span></div><div class="mast-kpi"><b>66</b><span>new features</span></div><div class="mast-kpi"><b>87</b><span>fixes</span></div><div class="mast-kpi"><b>6</b><span>platform areas touched</span></div></div>
   </div>
 </header>
 
@@ -249,143 +249,165 @@
     <div class="sec-head"><span class="eyebrow">The big story</span><div class="rule"></div></div>
     <div class="hero-card">
       <div>
-        <div class="tags"><span class="chip surface">Ship server</span><span class="chip surface">In-room TV</span><span class="chip surface">Global Admin</span><span class="chip surface">Integrations</span><span class="chip qa">In development</span></div>
-        <h3>Nevron Core can now run on a ship, with no internet for weeks</h3>
-        <p>Until now Nevron Core lived in the cloud. Every TV, phone and admin screen needed an internet connection to reach it. A cruise ship cannot promise that: it has internet at the dock and very little at sea. This fortnight the platform got a <b>ship edition</b> — a complete Nevron server that is installed on board and keeps the cabin TVs working for weeks with no connection at all.</p><p>The ship server installs with one command, makes its own passwords, and restarts by itself after a power cut. It backs itself up every night to a second disk and tests that the backup really restores. Upgrades come from a USB stick or a build store, and roll back automatically if the new version does not start cleanly. It can also <b>run the cabin TV network itself</b> — hand out addresses, names and the time — and keep laptops on that network away from the admin panel.</p><p>Two more pieces make it a real product. <b>Fleet access</b> lets Nevron and cruise-company staff on shore open a ship's own admin panel from Global Admin, with a one-time 60-second pass and no ship password. And the PMS Hub now talks to <b>Fidelio Cruise</b>, the guest system many ships use, so guest names and languages appear on cabin TVs and a guest is checked out only when the ship's system clearly says they have left.</p>
-        <div class="refs"><button class="more" data-f="ship-server">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1139">PR #1139</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1148">PR #1148</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1218">PR #1218</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1186">PR #1186</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1175">PR #1175</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1205">PR #1205</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1158">PR #1158</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1165">PR #1165</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1217">PR #1217</a></div>
+        <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
+        <h3>The room TV gets games, music groups, film search and favourites</h3>
+        <p>This cycle the room TV got the things guests reach for in the evening. There are <b>eight built-in games</b>, <b>music sorted into groups</b>, a <b>film search</b> on the remote, and <b>favourite channels</b>. Most of it was built for the first offline cruise ship, so it matches what the older Axon system offered. Every hotel that uses Nevron set-top boxes gets it too.</p><p>The games (Snake, Solitaire, Sudoku, 2048, Memory, Word search, Swarm and Five) run inside the TV app with no internet. They show on Nevron boxes and PC only. Samsung, LG, VIDAA, Philips and Android TVs hide them. New hotels get a “Games” category automatically.</p><p>The TV also remembers the guest's choices for the stay: the last channel, the channel group, and the sound language for films. A heart button on the control row adds a channel to the guest's favourites, and CH+/CH− then steps through favourites only.</p>
+        <div class="refs"><button class="more" data-f="tv-entertainment">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1240">PR #1240</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1267">PR #1267</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1252">PR #1252</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1239">PR #1239</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1278">PR #1278</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1332">PR #1332</a></div>
       </div>
       <div class="hero-side">
-        <ul><li>One-command install, nightly tested backup, one-command upgrade with automatic rollback</li><li>Pictures served straight from the ship server — fast screens, while licensed video stays protected</li><li>Optional: the server runs the cabin TV network (addresses, names, time) with a firewall guard</li><li>Fleet access: shore staff open a ship's admin panel from Global Admin, no ship password</li><li>Fidelio Cruise guest-system link, plus “Add several” and “Import from file” for setting up hundreds of cabins</li><li>Ships that ran the older Axon system keep their old TV start address working</li></ul>
+        <ul><li>8 offline games in a new “Games” category on the Apps screen</li><li>Music groups (Popular, Decades, Genres…), play or shuffle a whole group, pause with the remote</li><li>Film search with an on-screen keyboard: title, director and cast, accents ignored</li><li>Favourite channels, plus stay memory for channel, group and film sound language</li><li>A Podcasts screen for offline ships, and videos on catalogue information pages</li></ul>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="sec-head"><span class="eyebrow">In-room TV</span><div class="rule"></div></div>
-    <h2>Built for ships, useful for every hotel</h2>
+    <h2>Notices on the screen, one shared TV guide</h2>
     <div class="grid">
       <article class="card">
         <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
-        <h3>Different TV home screens for suites, crew cabins and the lobby</h3>
-        <p>A hotel used to have only two TV home screens: one for an occupied room and one for an empty room. Now staff can <b>choose the home screen per TV, per room or per device group</b> — and limit which channel categories each home screen offers.</p>
-        <div class="refs"><button class="more" data-f="tv-dashboard-per-group">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1211">PR #1211</a></div>
+        <h3>Staff can scroll short notices across room TVs</h3>
+        <p>A new admin page, <b>Widgets > Information strip</b>, lets staff write short text notices that crawl across the bottom or top of the TV. A notice can be urgent, scheduled by dates, hours and weekdays, and limited to chosen TVs and screens.</p>
+        <div class="refs"><button class="more" data-f="info-strip">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1241">PR #1241</a></div>
       </article>
       <article class="card">
-        <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
-        <h3>Radio stations and real channel numbers on room TVs</h3>
-        <p>Staff can mark any channel as a <b>radio station</b> and give every channel a <b>fixed number</b>. A radio station now shows a calm card with the station's logo, its number and the clock instead of a black screen.</p>
-        <div class="refs"><button class="more" data-f="tv-radio">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1226">PR #1226</a></div>
+        <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Admin panel</span><span class="chip surface">Under the hood</span><span class="chip qa">In QA</span></div>
+        <h3>Hotels that use the same TV guide now share one copy</h3>
+        <p>TV guide data is now downloaded <b>once and shared</b> by every hotel that uses the same source, instead of once per hotel. It refreshes four times a day. If one download fails, the affected channels keep their previous programmes instead of going blank. New admin pages show the guide feeds.</p>
+        <div class="refs"><button class="more" data-f="shared-tv-guide">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1272">PR #1272</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1296">PR #1296</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1329">PR #1329</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1432">PR #1432</a></div>
       </article>
       <article class="card">
-        <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
-        <h3>A world clock on the TV, and a calmer loading sign</h3>
-        <p>Hotels could already enter cities and time zones in the admin panel, but the TV had no screen for them. Now a <b>World Clock tile</b> opens a screen with the hotel's own time and one card per city. It works with no internet. The TV's loading sign also became a quiet three-dot pulse instead of a turning ring.</p>
-        <div class="refs"><button class="more" data-f="tv-world-clock">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1222">PR #1222</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1194">PR #1194</a></div>
-      </article>
-      <article class="card">
-        <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Integrations</span><span class="chip qa">In QA</span></div>
-        <h3>Telemach channels now link to the TV guide by themselves</h3>
-        <p>A Telemach channel import linked almost no channels to the programme guide — <b>2 of 21</b> at Nevron Hospitality, 13 of 77 at Hotel Medical. Guests saw empty guides on most channels. The import now links them by the guide's fixed channel number, and a new <b>Re-link TV guide</b> button repairs existing hotels.</p>
-        <div class="refs"><button class="more" data-f="telemach-guide">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1223">PR #1223</a></div>
-      </article></div>
-  </section>
-  <section class="section">
-    <div class="sec-head"><span class="eyebrow">Guest app</span><div class="rule"></div></div>
-    <h2>Faster-feeling, clearer prices, the right clock</h2>
-    <div class="grid">
-      <article class="card">
-        <div class="tags"><span class="chip surface">Guest app</span><span class="chip qa">In QA</span></div>
-        <h3>The app shows the shape of the page while it loads, not a spinner</h3>
-        <p>Almost every guest-app screen now loads with a <b>grey outline of the page it is about to show</b> — the dashboard, lists, detail pages, forms and in-stay screens. A link from a QR code or a notification no longer flashes the Guest/Visitor front door first, and the opening screen fades into the first page in the hotel's colours.</p>
-        <div class="refs"><button class="more" data-f="loading-outlines">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1099">PR #1099</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1106">PR #1106</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1114">PR #1114</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1118">PR #1118</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1135">PR #1135</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1134">PR #1134</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1202">PR #1202</a></div>
-      </article>
-      <article class="card">
-        <div class="tags"><span class="chip surface">Guest app</span><span class="chip surface">Admin panel</span><span class="chip surface">In-room TV</span><span class="chip qa">In QA</span></div>
-        <h3>Prices can say “from” and “per person”</h3>
-        <p>Items can now carry a <b>“from” prefix and a unit</b> — per person, per night, per hour, per stay and others. Guests see one clear phrase in their own language, such as “from €70 per person”. A “from” price is <b>never charged by itself</b>: staff always set the final price first.</p>
-        <div class="refs"><button class="more" data-f="from-prices">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1104">PR #1104</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1107">PR #1107</a></div>
-      </article>
-      <article class="card">
-        <div class="tags"><span class="chip surface">Guest app</span><span class="chip surface">Admin panel</span><span class="chip surface">In-room TV</span><span class="chip qa">In QA</span></div>
-        <h3>Booking times and check-out times now follow the hotel&#x27;s own clock</h3>
-        <p>A guest who picked “10:00” had the booking saved by their <b>phone's</b> clock, and emails printed the time in UTC. Now every booking time means the <b>hotel's local time</b> — in the guest app, on the TV, in the admin panel and in emails. The hotel's check-in and check-out times also have <b>one home</b> in Settings, and guests are no longer locked out on checkout morning.</p>
-        <div class="refs"><button class="more" data-f="hotel-time">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1151">PR #1151</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1167">PR #1167</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1130">PR #1130</a></div>
-      </article>
-      <article class="card">
-        <div class="tags"><span class="chip surface">Guest app</span><span class="chip surface">Global Admin</span><span class="chip qa">In QA</span></div>
-        <h3>Hotel descriptions in the Property list follow the guest&#x27;s language</h3>
-        <p>In the Property list (My bookings, past stays, Browse properties) every hotel showed one English description, whatever the guest's language. Now each hotel can have <b>a description per language</b>, and Global Admin has a <b>translate button</b> that drafts one from the English text.</p>
-        <div class="refs"><button class="more" data-f="property-list-language">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1136">PR #1136</a></div>
+        <div class="tags"><span class="chip surface">Digital Signage</span><span class="chip qa">In QA</span></div>
+        <h3>Live streams in digital signage playlists</h3>
+        <p>Lobby and hallway screens can now play a <b>live stream</b> as a playlist item, next to images, videos and web pages.</p>
+        <div class="refs"><button class="more" data-f="signage-live">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1328">PR #1328</a></div>
       </article></div>
   </section>
   <section class="section">
     <div class="sec-head"><span class="eyebrow">AI concierge</span><div class="rule"></div></div>
-    <h2>A new answer engine, measured before it is switched on</h2>
+    <h2>The new guest chat is switched on everywhere</h2>
     <div class="grid">
       <article class="card">
-        <div class="tags"><span class="chip surface">Guest app</span><span class="chip surface">AI concierge</span><span class="chip qa">In QA</span></div>
-        <h3>A new guest chat engine that checks every sentence before the guest sees it</h3>
-        <p>The guest AI chat was rebuilt from the inside. On the test hotel it put the right item first in about <b>71%</b> of answers and wrongly said “no” in <b>12%</b>. The new engine reaches about <b>91%</b> and <b>2–3%</b>, starts typing in about two seconds, and never invents a booking or a price. It is <b>off by default</b> and switched on per assistant.</p>
-        <div class="refs"><button class="more" data-f="new-chat-engine">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1140">PR #1140</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1153">PR #1153</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1154">PR #1154</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1207">PR #1207</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1213">PR #1213</a></div>
+        <div class="tags"><span class="chip surface">AI concierge</span><span class="chip surface">Guest app</span><span class="chip surface">Integrations</span><span class="chip qa">In QA</span></div>
+        <h3>Website chat, Telegram, WhatsApp and the guest app now use the new chat engine</h3>
+        <p>The new answer engine from the last edition is now <b>live on every channel</b>: guest-app visitors, the website chat, Telegram, and AI reply drafts for WhatsApp, Messenger and Instagram. Every new assistant and every new hotel starts on it. Retiring the old chat has begun.</p>
+        <div class="refs"><button class="more" data-f="new-chat-live">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1331">PR #1331</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1343">PR #1343</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1421">PR #1421</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1345">PR #1345</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1333">PR #1333</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1383">PR #1383</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1442">PR #1442</a></div>
       </article>
       <article class="card">
-        <div class="tags"><span class="chip surface">Global Admin</span><span class="chip surface">AI concierge</span><span class="chip qa">In QA</span></div>
-        <h3>AI chat cost is priced from a table Nevron controls</h3>
-        <p>The new guest chat's running cost is now calculated from the <b>model and speed</b> that OpenAI actually reports, using a <b>price table in Global Admin</b>. A model with no price is shown as “not priced” — never as a guessed number.</p>
-        <div class="refs"><button class="more" data-f="ai-cost-table">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1206">PR #1206</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1111">PR #1111</a></div>
+        <div class="tags"><span class="chip surface">AI concierge</span><span class="chip surface">Guest app</span><span class="chip qa">In QA</span></div>
+        <h3>The chat answers in the language the guest writes in</h3>
+        <p>The guest-app chat now <b>switches to the guest's language</b> when it is sure which one it is, and a guest can ask for a language in their own words (“in English please”). Prices also follow the guest's language on every guest surface.</p>
+        <div class="refs"><button class="more" data-f="chat-language">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1388">PR #1388</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1393">PR #1393</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1443">PR #1443</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">AI concierge</span><span class="chip surface">Guest app</span><span class="chip qa">In QA</span></div>
+        <h3>The chat can open My Room actions with a button</h3>
+        <p>When a guest asks for something that My Room handles, the chat now offers a <b>button that opens that action</b> directly. The chat describes the option, and the app shows the button.</p>
+        <div class="refs"><button class="more" data-f="chat-my-room">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1401">PR #1401</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1382">PR #1382</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Admin panel</span><span class="chip surface">AI concierge</span><span class="chip qa">In QA</span></div>
+        <h3>Staff can see how the AI read a hotel guide, and correct it</h3>
+        <p>Every uploaded guide in the Knowledge Base now shows a status and a <b>“See how we read it”</b> button. Staff can <b>correct or hide</b> any line the AI took from the guide, and the assistant follows the fix.</p>
+        <div class="refs"><button class="more" data-f="kb-how-we-read">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1242">PR #1242</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1251">PR #1251</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1282">PR #1282</a></div>
       </article></div>
   </section>
   <section class="section">
-    <div class="sec-head"><span class="eyebrow">Money &amp; safety</span><div class="rule"></div></div>
-    <h2>Guests&#x27; money and data, handled by one rule each</h2>
+    <div class="sec-head"><span class="eyebrow">Admin panel</span><div class="rule"></div></div>
+    <h2>Settings you can find, and guest feedback staff can act on</h2>
     <div class="grid">
       <article class="card">
-        <div class="tags"><span class="chip surface">Guest app</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
-        <h3>An order with the guest&#x27;s money on it can no longer just disappear</h3>
-        <p>Eight different places could cancel or delete an order, and each decided on its own whether money was involved. Staff could delete a card-paid order and leave the guest's money on an order that no longer existed. Now <b>one shared rule</b> decides: an order that is card-paid, charged to the room or has a payment in progress cannot be deleted — only cancelled, which also stops the card payment.</p>
-        <div class="refs"><button class="more" data-f="money-committed">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1137">PR #1137</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1120">PR #1120</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1122">PR #1122</a></div>
+        <div class="tags"><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
+        <h3>Manager Settings becomes 7 tabs with search</h3>
+        <p>The long Manager Settings page is now <b>7 tabs</b>, each with its own Save button, plus a <b>search</b> that finds a setting by name. Two saves can no longer undo each other.</p>
+        <div class="refs"><button class="more" data-f="manager-settings">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1402">PR #1402</a></div>
       </article>
       <article class="card">
-        <div class="tags"><span class="chip surface">Integrations</span><span class="chip qa">Ready to deploy</span></div>
-        <h3>A guest who left is checked out, even when the PMS message is lost</h3>
-        <p>At Hotel Medical, a guest whose check-out message from the PMS got lost stayed “in the house” in Nevron: app access and the TV welcome name stayed on until the original departure date. Now a <b>complete</b> resync with the PMS checks out guests it no longer lists — and an incomplete one never removes anyone.</p>
-        <div class="refs"><button class="more" data-f="pms-safety-net">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1224">PR #1224</a></div>
+        <div class="tags"><span class="chip surface">In-room TV</span><span class="chip surface">Guest app</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
+        <h3>Guest Pulse Check: short questions during the stay, with staff alerts</h3>
+        <p>Hotels can ask guests <b>short questions at set moments of the stay</b> (“How was your check-in?”). Guests answer on the room TV or in the app. A poor answer <b>raises an alert</b> to staff, and the alert escalates if nobody acts.</p>
+        <div class="refs"><button class="more" data-f="pulse-check">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1404">PR #1404</a></div>
       </article>
       <article class="card">
-        <div class="tags"><span class="chip surface">Under the hood</span><span class="chip qa">In QA</span></div>
-        <h3>Guest data kept out of error reports, and visitor limits that cannot be bypassed</h3>
-        <p>Error reports sent to Sentry (the tool developers use to see crashes) <b>no longer contain guest-typed text</b>, names or contact details. All 23 visitor rate limits now count visitors by <b>one shared rule</b> that the usual tricks cannot get around.</p>
-        <div class="refs"><button class="more" data-f="privacy-limits">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1102">PR #1102</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1080">PR #1080</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1155">PR #1155</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1172">PR #1172</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1185">PR #1185</a></div>
+        <div class="tags"><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
+        <h3>Translations update when the main text changes</h3>
+        <p>When staff change a text in the hotel's main language, the machine translations now <b>refresh automatically</b>. A <b>Retranslate</b> button redoes them on request. Hotel names are never machine-translated.</p>
+        <div class="refs"><button class="more" data-f="translations-refresh">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1253">PR #1253</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1254">PR #1254</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1255">PR #1255</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1302">PR #1302</a></div>
       </article></div>
   </section>
   <section class="section">
-    <div class="sec-head"><span class="eyebrow">Sales &amp; onboarding</span><div class="rule"></div></div>
-    <h2>Demo hotels and review data, closer to the real thing</h2>
+    <div class="sec-head"><span class="eyebrow">Staff app &amp; ships</span><div class="rule"></div></div>
+    <h2>Crew phones and ship servers, ready for the first voyage</h2>
     <div class="grid">
       <article class="card">
-        <div class="tags"><span class="chip surface">Nevron sales</span><span class="chip surface">Global Admin</span><span class="chip qa">In QA</span></div>
-        <h3>The demo tour plays by itself and lets a prospect ask for their own app</h3>
-        <p>The guided demo tour from the last edition was rebuilt to the agreed design. It now <b>starts by itself</b>, has a gold step rail to jump between chapters, and a black-and-gold side tab: “Your price” for prospects with a custom offer, or <b>“Generate guest app”</b> for general prospects, which sends Nevron a request.</p>
-        <div class="refs"><button class="more" data-f="demo-tour-ribbon">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1125">PR #1125</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1081">PR #1081</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1084">PR #1084</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1083">PR #1083</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1126">PR #1126</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1103">PR #1103</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1199">PR #1199</a></div>
+        <div class="tags"><span class="chip surface">Staff app</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
+        <h3>Inspections with checklists on the crew phone</h3>
+        <p>Staff can attach a <b>checklist</b> to an inspection task, also to a recurring one. Crew walk through the lines on the phone and record what failed. Each hotel chooses whether cabins <b>must be inspected</b> before they count as ready.</p>
+        <div class="refs"><button class="more" data-f="inspections">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1400">PR #1400</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1399">PR #1399</a></div>
       </article>
       <article class="card">
-        <div class="tags"><span class="chip surface">Nevron sales</span><span class="chip surface">Integrations</span><span class="chip qa">In QA</span></div>
-        <h3>Hotels built from a website get their review links and a Ratings page</h3>
-        <p>The website reader can now pass a hotel's <b>review-site links</b> (Booking.com, Tripadvisor, Google and others) and its <b>room count</b>. A scraped hotel gets a filled Ratings page and a Ratings tile on its home screen. The reader can also build <b>two hotels at once</b>, and can build a plain hotel without the demo setup.</p>
-        <div class="refs"><button class="more" data-f="scraper-ratings">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1108">PR #1108</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1112">PR #1112</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1107">PR #1107</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1215">PR #1215</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1150">PR #1150</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1210">PR #1210</a></div>
+        <div class="tags"><span class="chip surface">Staff app</span><span class="chip qa">In QA</span></div>
+        <h3>A boarding day board for supervisors</h3>
+        <p>Supervisors get a <b>Boarding day</b> screen: cabins ready, a live countdown to boarding, a progress bar and the stages. Supervisors also see <b>figures per crew member</b> and task history.</p>
+        <div class="refs"><button class="more" data-f="boarding-day">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1413">PR #1413</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1441">PR #1441</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1440">PR #1440</a></div>
       </article>
       <article class="card">
-        <div class="tags"><span class="chip surface">Admin panel</span><span class="chip surface">Integrations</span><span class="chip qa">In QA</span></div>
-        <h3>Review Management reads real review data</h3>
-        <p>The review connectors were built from the provider's documentation. A live check showed that <b>none of the 11 platforms</b> read reviews correctly. All connectors now use the provider's <b>real answers</b>, avoid duplicate reviews, and stop paying for pages they do not need.</p>
-        <div class="refs"><button class="more" data-f="review-management">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1171">PR #1171</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1192">PR #1192</a></div>
+        <div class="tags"><span class="chip surface">Ship server</span><span class="chip surface">Under the hood</span><span class="chip qa">In QA</span></div>
+        <h3>A guided installer for a hotel or ship server</h3>
+        <p>A new server is now installed with <b>one start line</b> and about 12 plain questions with defaults. Nothing changes until someone types “yes”. Later changes, such as the internet settings, use a guided change mode.</p>
+        <div class="refs"><button class="more" data-f="site-installer">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1359">PR #1359</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1406">PR #1406</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1360">PR #1360</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1387">PR #1387</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1259">PR #1259</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1269">PR #1269</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1344">PR #1344</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Ship server</span><span class="chip surface">Admin panel</span><span class="chip qa">In QA</span></div>
+        <h3>Tools to move a ship from Axon to Nevron Core</h3>
+        <p>A ship running the older Axon system can now be <b>exported and imported into Nevron Core</b>: cabins, boxes, channels, home screens, apps and more. Films can be <b>imported from drives and server folders</b>, with a film check and a recycle bin.</p>
+        <div class="refs"><button class="more" data-f="axon-changeover">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1273">PR #1273</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1275">PR #1275</a></div>
+      </article></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Integrations</span><div class="rule"></div></div>
+    <h2>MEWS, ready for certification</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">Integrations</span><span class="chip qa">In QA</span></div>
+        <h3>MEWS connection made safer, and the certification pack is ready</h3>
+        <p>Several MEWS fixes make sure a guest's charges reach their bill. A charge held back during a <b>MEWS disconnect</b> can now be posted once the hotel reconnects. Cancelling an order <b>refunds every line</b>. The daily sync keeps short stays.</p>
+        <div class="refs"><button class="more" data-f="mews">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1287">PR #1287</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1265">PR #1265</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1320">PR #1320</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1321">PR #1321</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1348">PR #1348</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1266">PR #1266</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1288">PR #1288</a></div>
+      </article></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Guest app</span><div class="rule"></div></div>
+    <h2>A faster start, and account deletion done right</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">Guest app</span><span class="chip qa">In QA</span></div>
+        <h3>The guest app opens faster and recovers from a bad connection</h3>
+        <p>The app <b>downloads less before the home screen</b> and asks the server fewer questions at start-up. If the first load fails or a download drops, the app now <b>recovers by itself</b> instead of staying blank.</p>
+        <div class="refs"><button class="more" data-f="faster-start">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1285">PR #1285</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1317">PR #1317</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1286">PR #1286</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1303">PR #1303</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1380">PR #1380</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1307">PR #1307</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1323">PR #1323</a></div>
+      </article>
+      <article class="card">
+        <div class="tags"><span class="chip surface">Guest app</span><span class="chip qa">In QA</span></div>
+        <h3>Deleting a guest account works end to end</h3>
+        <p>The <b>“Cancel account deletion”</b> link in the deletion email now works. Deleting the account also <b>unlinks Sign in with Apple</b>, as Apple's rules require.</p>
+        <div class="refs"><button class="more" data-f="account-deletion">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1363">PR #1363</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1353">PR #1353</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1327">PR #1327</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1371">PR #1371</a></div>
+      </article></div>
+  </section>
+  <section class="section">
+    <div class="sec-head"><span class="eyebrow">Under the hood</span><div class="rule"></div></div>
+    <h2>Testing on a real phone, with words</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="tags"><span class="chip surface">Under the hood</span></div>
+        <h3>Testers can talk through a phone recording and get draft bug cards</h3>
+        <p>A new internal tool takes a <b>phone screen recording with spoken comments</b>, turns the talk into separate draft tasks with the right screenshot, and adds the matching server logs. A person reviews the drafts before any Monday card is created.</p>
+        <div class="refs"><button class="more" data-f="narrated-tests">Read more</button><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1407">PR #1407</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1408">PR #1408</a><a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1410">PR #1410</a></div>
       </article></div>
   </section>
 
   <section class="section">
     <div class="sec-head"><span class="eyebrow">Also fixed</span><div class="rule"></div></div>
     <h2>Smaller fixes worth knowing about</h2>
-    <div class="fixes"><div class="fix"><div><b>Hotels get weather again</b> — hourly refresh, humidity up to 100%, and new locations work. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1191">#1191</a></div></div><div class="fix"><div><b>A hotel with no mail server</b> gets one warning per email instead of a flood of retries. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1219">#1219</a></div></div><div class="fix"><div><b>Paid TV bookings return to the catalogue</b> after card or room-charge payment, and Samsung TVs play plain HLS channels instead of a black screen. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1220">#1220</a></div></div><div class="fix"><div><b>The TV welcome language choice is saved again.</b> <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1221">#1221</a></div></div><div class="fix"><div><b>A movie or episode whose video was deleted</b> shows “no video” instead of a broken player. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1166">#1166</a></div></div><div class="fix"><div><b>Fast check-in completes the stay a signed-in guest is already on</b> instead of creating a duplicate. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1086">#1086</a></div></div><div class="fix"><div><b>A dead fast check-in link is forgotten</b> by the guest app in every language. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1181">#1181</a></div></div><div class="fix"><div><b>The guest bill keeps “Ready for pickup” orders</b>, and order totals refuse to add mixed currencies. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1157">#1157</a></div></div><div class="fix"><div><b>The guest app no longer shows a previous guest's data</b> from its offline copy, and Enter sends a message in the AI chat. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1160">#1160</a></div></div><div class="fix"><div><b>Background jobs skip a deleted hotel</b> instead of running in the shared area. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1173">#1173</a></div></div><div class="fix"><div><b>Notifications read fully in the guest's language</b>, and date and time picker headings are translated. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1127">#1127</a></div></div><div class="fix"><div><b>Failed orders, carts and bookings show the translated error message</b>, never English technical text. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1110">#1110</a></div></div><div class="fix"><div><b>The AI chat shows a Book card</b> for things guests can book in the app, instead of sending them to reception. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1096">#1096</a></div></div><div class="fix"><div><b>The back arrow no longer hides under the phone's status bar.</b> <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1133">#1133</a></div></div><div class="fix"><div><b>A new website-built hotel no longer hangs 15 minutes</b> at its last step. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1210">#1210</a></div></div><div class="fix"><div><b>The Android guest app no longer asks for the advertising ID</b> — required for the Play Store listing. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1187">#1187</a></div></div><div class="fix"><div><b>The Fast Check-In tile gets a proper default icon</b> instead of a dot-grid placeholder. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1097">#1097</a></div></div></div>
+    <div class="fixes"><div class="fix"><div><b>TV boxes stop re-tuning healthy live channels</b> every ~30 seconds. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1372">#1372</a></div></div><div class="fix"><div><b>TVs ride out a server overload</b> instead of showing an error screen, and boxes on Core's own network get the right time. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1373">#1373</a></div></div><div class="fix"><div><b>Order email retries</b> now really send the email they owe, over about 21 minutes. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1433">#1433</a></div></div><div class="fix"><div><b>New hotels no longer fail</b> for 5 minutes after a deploy, and a new hotel is always built complete. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1423">#1423</a></div></div><div class="fix"><div><b>PMS Hub keeps syncing</b> after a full sync instead of staying on “syncing” until a restart. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1394">#1394</a></div></div><div class="fix"><div><b>A shared cabin gets one departure clean</b>, not one per passenger. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1440">#1440</a></div></div><div class="fix"><div><b>Chat cards with a “from” price</b> no longer wait 8–16 seconds for their price words. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1438">#1438</a></div></div><div class="fix"><div><b>Reception sees the guest's rating</b> of a room-care request on the Orders page. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1398">#1398</a></div></div><div class="fix"><div><b>Android phones with 3-button navigation</b> show the app menu correctly at sign-in and in landscape. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1347">#1347</a></div></div><div class="fix"><div><b>Review Management's unread badge</b> ignores reviews from the first import and gets a Mark all as read button. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1350">#1350</a></div></div><div class="fix"><div><b>New hotels get the full set of TV and guest-app icons</b> from the start. <a class="ref" href="https://github.com/NevronCore/nevron-core/pull/1295">#1295</a></div></div></div>
   </section>
 
   <section class="section">
@@ -394,16 +416,16 @@
     <p class="sec-note">A snapshot of the board today — not everything here lands in the next edition.</p>
     <div class="pipe">
       <div class="pipe-col col-ready">
-        <h3><span class="dot g"></span>Ready to deploy<span class="cnt">2</span></h3>
-        <ul><li><b>TV bug bundle</b> — paid bookings return to the catalogue, Samsung HLS channels play</li><li><b>PMS safety net</b> — departed Hotel Medical guests are checked out</li></ul>
+        <h3><span class="dot g"></span>Ready to deploy<span class="cnt">1</span></h3>
+        <ul><li><b>1 card</b> — an automated test for the staff app's live updates</li></ul>
       </div>
       <div class="pipe-col col-qa">
-        <h3><span class="dot a"></span>In QA on preprod<span class="cnt">8</span></h3>
-        <ul><li><b>Unified Guest Messaging</b>, plus <b>Messenger and Instagram DM</b></li><li><b>Terms &amp; Conditions</b> — including signing the guest out after their stay</li><li><b>Reviews management</b> and the <b>guest AI concierge rebuild</b></li><li><b>Guest app loading outlines</b> and the <b>pop-up messages redesign</b></li><li><b>Online payments</b>, <b>Notifications center</b>, <b>Bentral integration</b></li><li><b>Digital Signage</b> stabilisation and <b>stable TV identity</b> on Android TVs</li><li>Five <b>bug batches</b> (A–E) — guest app, rate limits, guest bill, dev tools, background jobs</li><li>61 items in total are waiting for sign-off</li></ul>
+        <h3><span class="dot a"></span>In QA on preprod<span class="cnt">6</span></h3>
+        <ul><li><b>Guest Pulse Check</b> and the <b>Manager Settings</b> redesign</li><li><b>Hostfulness index</b> and <b>prices in the guest's language</b></li><li><b>Dashboard composers</b> — real-screen preview, draft and Publish</li><li><b>Reviews management</b>, <b>Unified Guest Messaging</b>, <b>Messenger and Instagram DM</b></li><li><b>Online payments</b>, <b>Notifications center</b>, <b>Bentral integration</b></li><li>72 items in total are waiting for sign-off</li></ul>
       </div>
       <div class="pipe-col col-dev">
         <h3><span class="dot b"></span>In development<span class="cnt">6</span></h3>
-        <ul><li><b>Offline installation rollout</b> — first ship, TV only, ready by 22 October</li><li><b>Store launches</b> — Nevron Guest and Nevron Staff</li><li><b>Nevron Ware → Core migration</b> for the five Australian sites</li><li><b>TV “Continue on mobile”</b> — a QR code that signs the guest into the app</li><li><b>AI truthfulness</b>, <b>AI Context</b> and <b>Analytics 2.0</b></li><li><b>MEWS certification</b>, <b>Staff App V1</b> and the <b>Elektronček–GIS</b> integration</li></ul>
+        <ul><li><b>Offline installation rollout</b> and the rest of the <b>shared TV guide</b></li><li><b>Early check-in</b>, <b>Guest identity and fast check-in</b>, the <b>guest feedback package</b></li><li><b>Staff App V1</b> and the <b>Nevron Staff</b> store launch</li><li><b>Nevron Ware → Core migration</b> and the <b>Elektronček–GIS</b> integration</li><li><b>AI truthfulness</b>, <b>AI Context</b>, <b>Analytics 2.0</b> and the <b>Nevron AI action layer</b></li><li>23 items in total are in progress</li></ul>
       </div></div>
   </section>
 
@@ -411,25 +433,25 @@
     <div class="sec-head"><span class="eyebrow">The numbers</span><div class="rule"></div></div>
     <h2>This cycle in figures</h2>
     <div class="numbers">
-      <div class="stat-stack"><div class="stat"><b>148</b><span>PRs merged</span></div><div class="stat"><b>249</b><span>commits</span></div><div class="stat"><b>507k</b><span>lines touched</span></div><div class="stat"><b>2</b><span>contributors</span></div></div>
+      <div class="stat-stack"><div class="stat"><b>213</b><span>PRs merged</span></div><div class="stat"><b>321</b><span>commits</span></div><div class="stat"><b>787k</b><span>lines touched</span></div><div class="stat"><b>2</b><span>contributors</span></div></div>
       <div class="chart-card">
         <h3>Where the work happened</h3>
-        <p class="sub">Lines of code touched per platform area, 2 – 16 October</p>
-        <div class="bar-row" data-tip="322,241 lines · 2,019 files"><span class="bar-label">Backend</span><div class="bar-track"><div class="bar" style="--w:100%"></div></div><span class="bar-val">322.2k</span></div><div class="bar-row" data-tip="61,065 lines · 888 files"><span class="bar-label">Guest app</span><div class="bar-track"><div class="bar" style="--w:19.0%"></div></div><span class="bar-val">61.1k</span></div><div class="bar-row" data-tip="16,905 lines · 206 files"><span class="bar-label">Admin panel</span><div class="bar-track"><div class="bar" style="--w:5.2%"></div></div><span class="bar-val">16.9k</span></div><div class="bar-row" data-tip="3,001 lines · 25 files"><span class="bar-label">PMS Hub</span><div class="bar-track"><div class="bar" style="--w:0.9%"></div></div><span class="bar-val">3,001</span></div><div class="bar-row" data-tip="2,303 lines · 59 files"><span class="bar-label">In-room TV</span><div class="bar-track"><div class="bar" style="--w:0.7%"></div></div><span class="bar-val">2,303</span></div>
+        <p class="sub">Lines of code touched per platform area, 16 October – 6 November</p>
+        <div class="bar-row" data-tip="359,681 lines · 3,202 files"><span class="bar-label">Backend</span><div class="bar-track"><div class="bar" style="--w:100.0%"></div></div><span class="bar-val">359.7k</span></div><div class="bar-row" data-tip="100,598 lines · 813 files"><span class="bar-label">Admin panel</span><div class="bar-track"><div class="bar" style="--w:28.0%"></div></div><span class="bar-val">100.6k</span></div><div class="bar-row" data-tip="49,788 lines · 359 files"><span class="bar-label">In-room TV</span><div class="bar-track"><div class="bar" style="--w:13.8%"></div></div><span class="bar-val">49.8k</span></div><div class="bar-row" data-tip="33,193 lines · 554 files"><span class="bar-label">Guest app</span><div class="bar-track"><div class="bar" style="--w:9.2%"></div></div><span class="bar-val">33.2k</span></div><div class="bar-row" data-tip="11,443 lines · 57 files"><span class="bar-label">PMS Hub</span><div class="bar-track"><div class="bar" style="--w:3.2%"></div></div><span class="bar-val">11.4k</span></div><div class="bar-row" data-tip="123 lines · 7 files"><span class="bar-label">Website widget</span><div class="bar-track"><div class="bar" style="--w:0.0%"></div></div><span class="bar-val">123</span></div>
         <details>
           <summary>View as table</summary>
-          <table><tr><th>Area</th><th>Lines touched</th><th>Files</th></tr><tr><td>Backend</td><td>322,241</td><td>2,019</td></tr><tr><td>Guest app</td><td>61,065</td><td>888</td></tr><tr><td>Admin panel</td><td>16,905</td><td>206</td></tr><tr><td>PMS Hub</td><td>3,001</td><td>25</td></tr><tr><td>In-room TV</td><td>2,303</td><td>59</td></tr></table>
+          <table><tr><th>Area</th><th>Lines touched</th><th>Files</th></tr><tr><td>Backend</td><td>359,681</td><td>3,202</td></tr><tr><td>Admin panel</td><td>100,598</td><td>813</td></tr><tr><td>In-room TV</td><td>49,788</td><td>359</td></tr><tr><td>Guest app</td><td>33,193</td><td>554</td></tr><tr><td>PMS Hub</td><td>11,443</td><td>57</td></tr><tr><td>Website widget</td><td>123</td><td>7</td></tr></table>
         </details>
       </div>
     </div>
-    <div class="bug-line"><span>🐛 Bugs reported this cycle: <b>5</b> — none critical or high (3 medium, 2 low)</span><span>Bugs closed on the board: <b>2</b> — most of this cycle's 63 fixes are waiting in QA</span><span>Open backlog: <b>90</b></span><span>Top contributor by volume: <b>Aljaž Gračnar</b> (143 PRs)</span></div>
+    <div class="bug-line"><span>🐛 Bugs reported this cycle: <b>17</b> — 1 critical, 4 high, 8 medium, 3 low</span><span>Bugs closed on the board: <b>4</b> — most of this cycle's 87 fixes are waiting in QA</span><span>Open backlog: <b>104</b></span><span>Top contributor by volume: <b>Aljaž Gračnar</b> (209 PRs)</span></div>
   </section>
 
   <div class="draft-note"><b>Generated automatically.</b> This edition was produced by the bi-weekly digest pipeline. Want something changed, added, or explained differently? Open Claude Code and say so — the edition will be regenerated.</div>
 
   <footer class="foot">
-    <p><b>How this report is made:</b> merged pull requests and commits from the platform repository, plus the Dev and Bugs boards on Monday, gathered for the 14-day window (2 – 16 October) and rewritten in plain language. “Lines touched” measures activity, not app size — the new guest chat engine with its test question sets (about 105k lines) and translation data (about 90k lines) account for most of this cycle's high backend figure. The ship server itself lives in its own install package and is not counted in the five areas. Only 2 items sit in “Ready to deploy”: finished work goes to preprod QA, where 61 items are waiting for sign-off, which is why only 2 bugs read as closed while 63 fixes shipped. Two contributors this cycle — Aljaž Gračnar and Gregor Skok.</p>
-    <p>Nevron Platform Digest · Nº 08 · generated 16 October 2026</p>
+    <p><b>How this report is made:</b> merged pull requests and commits from the platform repository, plus the Dev and Bugs boards on Monday, rewritten in plain language. <b>This edition covers three weeks</b> (16 October – 6 November) because the scheduled run on 30 October failed, so the figures are higher than usual. “Lines touched” measures activity, not app size. Finished work goes to preprod QA first, where 72 items are waiting for sign-off, which is why only 4 bugs read as closed while 87 fixes shipped. Two contributors this cycle — Aljaž Gračnar and Gregor Skok. The next edition is published on 20 November 2026.</p>
+    <p>Nevron Platform Digest · Nº 09 · published 6 November 2026</p>
   </footer>
 </main>
 
@@ -453,90 +475,70 @@
 
 <script>
   var FEATURES = {
-  "ship-server": {
-    "title": "Nevron Core can now run on a ship, with no internet for weeks",
+  "tv-entertainment": {
+    "title": "The room TV gets games, music groups, film search and favourites",
     "tags": [
-      [
-        "surface",
-        "Ship server"
-      ],
       [
         "surface",
         "In-room TV"
       ],
       [
         "surface",
-        "Global Admin"
-      ],
-      [
-        "surface",
-        "Integrations"
+        "Admin panel"
       ],
       [
         "qa",
-        "In development"
+        "In QA"
       ]
     ],
-    "how": "The ship edition is a separate install package; the cloud platform and the developer setup are not changed by it. Everything runs behind one front door on the ship: TVs use the server's name on the normal web port, crew open the admin panel on port 8080, and the database and storage cannot be reached from the network. Pictures get a fixed address that the front door answers directly, so a screen full of pictures no longer queues behind the backend; video plays only after the backend checks the request. For shore access, the ship keeps a slot for a secure tunnel that stays off until a token is entered. When a shore person presses Open in Global Admin, they receive a signed pass that works once, for that ship only, for 60 seconds; the ship checks it itself and signs them in for 8 hours. Video does not play from shore, by design. For Fidelio Cruise, the PMS Hub asks the ship's guest system about each cabin about every 45 minutes. A silent cabin, an error or a lost link never removes a guest.",
-    "use": "A ship leaves port with the Nevron server installed in its IT room. For three weeks at sea there is almost no internet, and the cabin TVs still show each guest's name, the ship's channels and the dashboard. A Nevron support person in Ljubljana gets a call about a cabin TV; when the ship has a connection, they open that ship's admin panel from Global Admin and fix it without asking anyone for a password.",
+    "how": "Games are part of the TV app itself, so they work with no connection. The admin panel's Apps list now has three entry types: Android app, built-in game and web game. Music groups are managed in the admin panel under Music > Groups, with a picture and a name in every language. A channel can be in several groups. A hotel with no groups keeps today's music screen. Film search matches from the start of a word, shows “Results: N”, and returns to the same place after Back.",
+    "use": "A family on a rainy evening opens Apps, picks Sudoku for the child, and later finds “All comedies with Jim Carrey” by typing “car” with the remote. The next day the TV is on the same channel, and their favourites are first in the list.",
     "who": [
       [
         "guest",
-        "Ship guests",
-        "A cabin TV that greets them by name and keeps working far from land."
+        "Guests",
+        "More to do on the TV without their own phone, also with no internet."
       ],
       [
         "staff",
-        "Ship crew",
-        "A server that restarts itself, backs itself up and shows a green-or-red status screen — no IT specialist needed on board."
+        "Hotels",
+        "Music and apps arranged by staff in the admin panel, with no technician visit."
       ],
       [
         "nevron",
         "Nevron",
-        "A new market: cruise lines and other places without reliable internet. The first ship installation is planned for 22 October."
+        "Feature parity with Axon, which the cruise-ship and Axon-migration deals need."
       ]
     ],
     "refs": [
       [
-        "PR #1139",
-        "https://github.com/NevronCore/nevron-core/pull/1139"
+        "PR #1240",
+        "https://github.com/NevronCore/nevron-core/pull/1240"
       ],
       [
-        "PR #1148",
-        "https://github.com/NevronCore/nevron-core/pull/1148"
+        "PR #1267",
+        "https://github.com/NevronCore/nevron-core/pull/1267"
       ],
       [
-        "PR #1218",
-        "https://github.com/NevronCore/nevron-core/pull/1218"
+        "PR #1252",
+        "https://github.com/NevronCore/nevron-core/pull/1252"
       ],
       [
-        "PR #1186",
-        "https://github.com/NevronCore/nevron-core/pull/1186"
+        "PR #1239",
+        "https://github.com/NevronCore/nevron-core/pull/1239"
       ],
       [
-        "PR #1175",
-        "https://github.com/NevronCore/nevron-core/pull/1175"
+        "PR #1278",
+        "https://github.com/NevronCore/nevron-core/pull/1278"
       ],
       [
-        "PR #1205",
-        "https://github.com/NevronCore/nevron-core/pull/1205"
-      ],
-      [
-        "PR #1158",
-        "https://github.com/NevronCore/nevron-core/pull/1158"
-      ],
-      [
-        "PR #1165",
-        "https://github.com/NevronCore/nevron-core/pull/1165"
-      ],
-      [
-        "PR #1217",
-        "https://github.com/NevronCore/nevron-core/pull/1217"
+        "PR #1332",
+        "https://github.com/NevronCore/nevron-core/pull/1332"
       ]
     ]
   },
-  "tv-dashboard-per-group": {
-    "title": "Different TV home screens for suites, crew cabins and the lobby",
+  "info-strip": {
+    "title": "Staff can scroll short notices across room TVs",
     "tags": [
       [
         "surface",
@@ -551,29 +553,29 @@
         "In QA"
       ]
     ],
-    "how": "In the admin panel the TV, room and device-group forms each get a TV dashboard dropdown. The most specific choice wins: the single TV, then the room, then the group, then the normal default. A TV dashboard can also list the channel categories its TVs receive; empty means all channels, as before. The server enforces the limit everywhere a TV reaches channels — the channel list, channel up and down, and the programme guide. A TV cannot sit in two groups that carry different home screens; staff get a message naming the TV and the groups.",
-    "use": "On a ship, crew cabins get a simple home screen with crew channels only, suites get a premium screen with every channel, and the screens in the bars show a public layout. In a city hotel, the conference floor gets a home screen with meeting-room information.",
+    "how": "Each notice has a text, a position, a label (Standard, Custom or None), an urgent flag, a schedule and a “Show on” list (home, live TV, TV guide, films and more). Urgent notices interrupt at once. The strip moves out of the way of the channel banner and never takes the remote's focus. Texts are translated automatically on save, like catalogue texts.",
+    "use": "The pool closes early for maintenance. Reception writes “Pool closed today from 16:00”, marks it urgent for today only, and every room TV shows it within moments.",
     "who": [
       [
         "guest",
         "Guests",
-        "A TV that fits where they are — a suite feels like a suite."
+        "Important hotel news reaches them on the screen they already watch."
       ],
       [
         "staff",
         "Hotels",
-        "Control over what each type of room sees, without one shared screen for everyone."
+        "One place to tell every room something, without printed notes."
       ]
     ],
     "refs": [
       [
-        "PR #1211",
-        "https://github.com/NevronCore/nevron-core/pull/1211"
+        "PR #1241",
+        "https://github.com/NevronCore/nevron-core/pull/1241"
       ]
     ]
   },
-  "tv-radio": {
-    "title": "Radio stations and real channel numbers on room TVs",
+  "shared-tv-guide": {
+    "title": "Hotels that use the same TV guide now share one copy",
     "tags": [
       [
         "surface",
@@ -583,473 +585,6 @@
         "surface",
         "Admin panel"
       ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "In Manager > Channels each channel has a “Radio station” switch and an optional channel number from 1 to 9999. Duplicate numbers are refused, with a message naming the other channel. The channel list can show TV only, radio only or both. On the TV, the channel bar, the channel list and the number a guest types now all use the same hotel channel number — this also fixes an earlier case where the bar and the list showed different numbers. The TV usage report now shows radio listening hours and the top stations.",
-    "use": "A guest types 501 on the remote and hears the ship's music station, with its logo on screen. The hotel later sees in analytics that the morning news station is the most played radio channel.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "Radio that looks finished, and channel numbers that match the printed list in the room."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "A channel line-up that matches the one they had on their old system."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1226",
-        "https://github.com/NevronCore/nevron-core/pull/1226"
-      ]
-    ]
-  },
-  "tv-world-clock": {
-    "title": "A world clock on the TV, and a calmer loading sign",
-    "tags": [
-      [
-        "surface",
-        "In-room TV"
-      ],
-      [
-        "surface",
-        "Admin panel"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "Staff add cities under Widgets > Time, then add the Time tile to a TV dashboard. The TV shows an “On board” strip with the ship or hotel name, time, date and time zone, then a card per city with its time, the difference to the hotel (“+5 h”), “Tomorrow” or “Yesterday” when the date differs, and a sun or moon. Every time is calculated on the TV itself, so the screen works at sea. If the crew changes the ship's time zone, an open clock screen follows within a minute.",
-    "use": "A ship crosses time zones overnight. In the morning a guest opens the World Clock to see what time it is at home before calling their family.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "Know the time at home and the gap to the ship at a glance."
-      ],
-      [
-        "nevron",
-        "Nevron",
-        "Closes one more gap between Nevron Core and the older Axon system that some ships use today."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1222",
-        "https://github.com/NevronCore/nevron-core/pull/1222"
-      ],
-      [
-        "PR #1194",
-        "https://github.com/NevronCore/nevron-core/pull/1194"
-      ]
-    ]
-  },
-  "telemach-guide": {
-    "title": "Telemach channels now link to the TV guide by themselves",
-    "tags": [
-      [
-        "surface",
-        "In-room TV"
-      ],
-      [
-        "surface",
-        "Integrations"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "Telemach's channel list and its guide come from different systems and use different names (“SLO 1 HD” against “Slovenija 1”), so matching by name almost never worked. The import now tries, in order: a guide number in the channel file, a built-in list of 58 Telemach channels, a name match only when exactly one guide channel fits, and then the old exact name. A link that staff made by hand is never changed. The Re-link button fills only channels that have no guide yet and reports what it could not link.",
-    "use": "A hotel on Telemach presses Re-link TV guide once. Guests who open the guide on most channels now see what is on now and next, instead of an empty row.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "A programme guide that is actually filled."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "No more hours of linking channels to the guide by hand."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1223",
-        "https://github.com/NevronCore/nevron-core/pull/1223"
-      ]
-    ]
-  },
-  "loading-outlines": {
-    "title": "The app shows the shape of the page while it loads, not a spinner",
-    "tags": [
-      [
-        "surface",
-        "Guest app"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "Each screen has a placeholder drawn at the real sizes of the content that replaces it: catalogue rows, Room Care, My Room, TV channels, movie rails, forms, Interests and so on. On laptops and sideways tablets the outline follows the wide layout. The banner, logo and greeting stay visible while the rest loads. With “reduce motion” switched on, the grey blocks stay still.",
-    "use": "A guest scans the room-service QR code on a slow hotel Wi-Fi. Instead of a spinner and then a jump, they see the menu's outline at once and the dishes fill in where they expect them.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "The app feels quicker and calmer, especially on weak Wi-Fi."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "Fewer “the app is stuck” complaints at the front desk."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1099",
-        "https://github.com/NevronCore/nevron-core/pull/1099"
-      ],
-      [
-        "PR #1106",
-        "https://github.com/NevronCore/nevron-core/pull/1106"
-      ],
-      [
-        "PR #1114",
-        "https://github.com/NevronCore/nevron-core/pull/1114"
-      ],
-      [
-        "PR #1118",
-        "https://github.com/NevronCore/nevron-core/pull/1118"
-      ],
-      [
-        "PR #1135",
-        "https://github.com/NevronCore/nevron-core/pull/1135"
-      ],
-      [
-        "PR #1134",
-        "https://github.com/NevronCore/nevron-core/pull/1134"
-      ],
-      [
-        "PR #1202",
-        "https://github.com/NevronCore/nevron-core/pull/1202"
-      ]
-    ]
-  },
-  "from-prices": {
-    "title": "Prices can say “from” and “per person”",
-    "tags": [
-      [
-        "surface",
-        "Guest app"
-      ],
-      [
-        "surface",
-        "Admin panel"
-      ],
-      [
-        "surface",
-        "In-room TV"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "Two optional settings sit next to the price on catalogue and room-service items. The phrase appears in the guest app, on the TV, on home-screen tiles and in AI chat cards, and the AI quotes it the same way. A shopping item with “from” cannot be put in the cart. A bookable item with “from” always waits for staff, and the confirm dialog asks staff for the final price; the guest then sees the old and the new price. The website reader keeps “from” and “per person” wording when it builds a hotel. Order analytics can now split orders by price unit.",
-    "use": "A spa lists a massage as “from €70 per person”. A guest books it; the therapist sets the final €85 for the 90-minute version when confirming, and the guest sees exactly that before paying.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "No surprise charges — an approximate price is shown as approximate."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "Can list services whose price depends on details, without inventing a fixed price."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1104",
-        "https://github.com/NevronCore/nevron-core/pull/1104"
-      ],
-      [
-        "PR #1107",
-        "https://github.com/NevronCore/nevron-core/pull/1107"
-      ]
-    ]
-  },
-  "hotel-time": {
-    "title": "Booking times and check-out times now follow the hotel's own clock",
-    "tags": [
-      [
-        "surface",
-        "Guest app"
-      ],
-      [
-        "surface",
-        "Admin panel"
-      ],
-      [
-        "surface",
-        "In-room TV"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "Opening hours, offered slots and “today” are all read in the hotel's time zone; confirmation emails now show the time, not only the date, in the guest's language. Check-in and check-out times used to live in four places that could disagree. Now only Settings > Property Info > Check-in &amp; Check-out is editable; the PMS Hub and Late check-out show the same times read-only. A checkout saved without a time counts as “the whole day”, so the guest can still enter the app that morning. Fast Check-in also compares the hotel's date, not UTC.",
-    "use": "A guest flying in from New York books a 10:00 spa slot on their phone, still set to New York time. The booking lands at 10:00 hotel time, and the confirmation email says “10:00” in Slovenian.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "The time they pick is the time they get, and the app works on their last morning."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "One place to set check-in and check-out, and fewer “wrong time” bookings."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1151",
-        "https://github.com/NevronCore/nevron-core/pull/1151"
-      ],
-      [
-        "PR #1167",
-        "https://github.com/NevronCore/nevron-core/pull/1167"
-      ],
-      [
-        "PR #1130",
-        "https://github.com/NevronCore/nevron-core/pull/1130"
-      ]
-    ]
-  },
-  "property-list-language": {
-    "title": "Hotel descriptions in the Property list follow the guest's language",
-    "tags": [
-      [
-        "surface",
-        "Guest app"
-      ],
-      [
-        "surface",
-        "Global Admin"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "In Global Admin > Realm Management, the hotel's profile has a language dropdown beside the description, one text per language. The translate button marks its draft “Auto” and asks before replacing an existing text; nothing is saved until Save is pressed. The guest app reloads the list when the guest switches language. A hotel with no text in that language shows English. Older app versions keep receiving English.",
-    "use": "A German guest browsing a hotel group's properties reads each hotel's description in German.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "Browse a group's hotels in their own language."
-      ],
-      [
-        "staff",
-        "Hotel groups",
-        "A multilingual showcase without writing every text by hand."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1136",
-        "https://github.com/NevronCore/nevron-core/pull/1136"
-      ]
-    ]
-  },
-  "new-chat-engine": {
-    "title": "A new guest chat engine that checks every sentence before the guest sees it",
-    "tags": [
-      [
-        "surface",
-        "Guest app"
-      ],
-      [
-        "surface",
-        "AI concierge"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "The AI receives a short list of everything the hotel offers, the best-matching details and a card about the guest, and writes one answer that types out live. Then code checks every sentence: no claim that something is booked, a nearby place is never presented as the hotel's own, prices must come from the hotel's own data, a diet clash is dropped, and the guest's allergies, health or religion are never repeated back or stored. Before it says “no” it searches again. The chat now also follows the hotel's own Tone setting (professional, friendly or casual), always uses the polite form, and makes no soft promises. The hotel's menu for the chat is now prepared in the background, so the first question no longer waits for it.",
-    "use": "A guest asks “could I get breakfast in my room?”. The old chat answered “Of course!” as if it was arranged. The new one says room breakfast exists, gives the real price, and shows the card to order it.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "Faster, correct answers that never promise what the hotel cannot do."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "Fewer guests at the desk asking about something the chat wrongly confirmed."
-      ],
-      [
-        "nevron",
-        "Nevron",
-        "A measured quality gate before each hotel is switched over, at about $0.36 per 1,000 messages."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1140",
-        "https://github.com/NevronCore/nevron-core/pull/1140"
-      ],
-      [
-        "PR #1153",
-        "https://github.com/NevronCore/nevron-core/pull/1153"
-      ],
-      [
-        "PR #1154",
-        "https://github.com/NevronCore/nevron-core/pull/1154"
-      ],
-      [
-        "PR #1207",
-        "https://github.com/NevronCore/nevron-core/pull/1207"
-      ],
-      [
-        "PR #1213",
-        "https://github.com/NevronCore/nevron-core/pull/1213"
-      ]
-    ]
-  },
-  "ai-cost-table": {
-    "title": "AI chat cost is priced from a table Nevron controls",
-    "tags": [
-      [
-        "surface",
-        "Global Admin"
-      ],
-      [
-        "surface",
-        "AI concierge"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "Global Admin > AI Settings > Model pricing holds the price per model and per speed (regular, fast, flex). Each chat reply's usage is priced from that table. The AI usage summary counts how many calls had no price, so a missing entry is visible instead of hidden. A separate fix stopped the first chat reply on a freshly started server from waiting about 15 seconds.",
-    "use": "OpenAI changes its prices. Nevron updates one row in Global Admin, and every report from then on uses the new price.",
-    "who": [
-      [
-        "nevron",
-        "Nevron",
-        "Honest cost figures per hotel — the basis for pricing the AI add-on."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1206",
-        "https://github.com/NevronCore/nevron-core/pull/1206"
-      ],
-      [
-        "PR #1111",
-        "https://github.com/NevronCore/nevron-core/pull/1111"
-      ]
-    ]
-  },
-  "money-committed": {
-    "title": "An order with the guest's money on it can no longer just disappear",
-    "tags": [
-      [
-        "surface",
-        "Guest app"
-      ],
-      [
-        "surface",
-        "Admin panel"
-      ],
-      [
-        "qa",
-        "In QA"
-      ]
-    ],
-    "how": "Every cancel path — guest, staff, admin, PMS, the overnight and hourly clean-up jobs — uses the same check. Cancelling stops the open card payment at Stripe first. Money that still arrives on a cancelled order is held for staff, and staff get one alert per payment. Guests can no longer cancel room-service or room-care orders themselves (founder decision: they contact reception). Where free cancellation of a booking is promised, the guest sees a quiet “Cancel booking” link instead of a red button. All guest-app pop-ups became a clear card in the hotel's own colours.",
-    "use": "A guest pays a room-service order by card, then changes their mind. Reception cancels it in the admin panel; the card payment is stopped at once and nobody is charged for food that never came.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "Their money is never stuck on an order nobody can see."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "Clear alerts when money needs attention, instead of silent mismatches."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1137",
-        "https://github.com/NevronCore/nevron-core/pull/1137"
-      ],
-      [
-        "PR #1120",
-        "https://github.com/NevronCore/nevron-core/pull/1120"
-      ],
-      [
-        "PR #1122",
-        "https://github.com/NevronCore/nevron-core/pull/1122"
-      ]
-    ]
-  },
-  "pms-safety-net": {
-    "title": "A guest who left is checked out, even when the PMS message is lost",
-    "tags": [
-      [
-        "surface",
-        "Integrations"
-      ],
-      [
-        "qa",
-        "Ready to deploy"
-      ]
-    ],
-    "how": "A resync counts as complete only when the PMS sends its end signal and every guest record could be read. A timeout or a dropped connection makes it partial; a partial list only adds and updates guests. A missing guest is checked out exactly like a normal PMS check-out, never deleted, and only after two complete resyncs agree. Past and future stays are never touched. The same guard now protects guest and room clean-up for other PMS systems.",
-    "use": "A guest leaves Hotel Medical early and the check-out message is lost in transit. The next full resync notices, checks the stay out, and the next guest in that room does not see the previous name on the TV.",
-    "who": [
-      [
-        "guest",
-        "Guests",
-        "Their name and app access end when their stay ends."
-      ],
-      [
-        "staff",
-        "Hotels",
-        "No ghost guests on TVs and in reports."
-      ]
-    ],
-    "refs": [
-      [
-        "PR #1224",
-        "https://github.com/NevronCore/nevron-core/pull/1224"
-      ]
-    ]
-  },
-  "privacy-limits": {
-    "title": "Guest data kept out of error reports, and visitor limits that cannot be bypassed",
-    "tags": [
       [
         "surface",
         "Under the hood"
@@ -1059,105 +594,77 @@
         "In QA"
       ]
     ],
-    "how": "Error texts, log lines and the addresses of outside services are cleaned of guest data before they leave the server. For rate limits, each visitor is now identified by their real address behind the cloud proxy, counted per hotel, and counted safely even when many requests arrive at once. A modern internet connection (IPv6) gets a large block of addresses; that whole block now counts as one visitor. A visitor with no readable address is counted, not let through.",
-    "use": "Someone tries to guess a guest's door PIN by sending thousands of requests from many addresses on one connection. The limit now stops them after a few attempts.",
+    "how": "The platform keeps one shared store of guide feeds, channels and programmes. Hotels are linked to the feeds they use, and new hotels are paired automatically. Guide addresses that contain a password are stored encrypted and shown masked. A feed that no hotel uses for 7 days is paused. Separately, programme times on the TV now follow the hotel's own time zone.",
+    "use": "Twenty hotels use the same national guide. The server downloads it once, not twenty times, and a short outage at the provider no longer empties the guide in any of them.",
     "who": [
       [
         "guest",
         "Guests",
-        "Their messages and details stay inside the hotel's system."
+        "A TV guide that is less often empty and shows the right times."
       ],
       [
         "nevron",
         "Nevron",
-        "Required for the App Store launch and for hotels' data-protection reviews."
+        "Less server load and fewer guide support tickets as the hotel count grows."
       ]
     ],
     "refs": [
       [
-        "PR #1102",
-        "https://github.com/NevronCore/nevron-core/pull/1102"
+        "PR #1272",
+        "https://github.com/NevronCore/nevron-core/pull/1272"
       ],
       [
-        "PR #1080",
-        "https://github.com/NevronCore/nevron-core/pull/1080"
+        "PR #1296",
+        "https://github.com/NevronCore/nevron-core/pull/1296"
       ],
       [
-        "PR #1155",
-        "https://github.com/NevronCore/nevron-core/pull/1155"
+        "PR #1329",
+        "https://github.com/NevronCore/nevron-core/pull/1329"
       ],
       [
-        "PR #1172",
-        "https://github.com/NevronCore/nevron-core/pull/1172"
-      ],
-      [
-        "PR #1185",
-        "https://github.com/NevronCore/nevron-core/pull/1185"
+        "PR #1432",
+        "https://github.com/NevronCore/nevron-core/pull/1432"
       ]
     ]
   },
-  "demo-tour-ribbon": {
-    "title": "The demo tour plays by itself and lets a prospect ask for their own app",
+  "signage-live": {
+    "title": "Live streams in digital signage playlists",
     "tags": [
       [
         "surface",
-        "Nevron sales"
-      ],
-      [
-        "surface",
-        "Global Admin"
+        "Digital Signage"
       ],
       [
         "qa",
         "In QA"
       ]
     ],
-    "how": "The tour starts after a short “tap anywhere to explore on your own” hint; a visit counts only if the page stays on screen, so link scanners never start it. Each demo link carries a tier — custom or generic. A “Generate guest app” request emails one Nevron address and shows as “Wants their app” on the Global Admin Demo tours page. Prospect hotels now offer the nearby rental services as the hotel's own, so the tour can book a bike from the AI's day plan and pay it with a test card. Global Admin warns before switching on settings that would break a tour.",
-    "use": "A hotel manager opens the link from a sales email, watches two chapters, taps “Generate guest app” and types their website. Sales sees the request the same morning.",
+    "how": "A live stream is added to a signage playlist like any other item and follows the playlist's schedule.",
+    "use": "A conference hotel shows the live stream from the main hall on the screens outside, between the event schedule slides.",
     "who": [
       [
-        "nevron",
-        "Nevron sales",
-        "Warm leads from people who watched the tour and asked for their app."
+        "staff",
+        "Hotels",
+        "Live events reach guests outside the room where they happen."
       ]
     ],
     "refs": [
       [
-        "PR #1125",
-        "https://github.com/NevronCore/nevron-core/pull/1125"
-      ],
-      [
-        "PR #1081",
-        "https://github.com/NevronCore/nevron-core/pull/1081"
-      ],
-      [
-        "PR #1084",
-        "https://github.com/NevronCore/nevron-core/pull/1084"
-      ],
-      [
-        "PR #1083",
-        "https://github.com/NevronCore/nevron-core/pull/1083"
-      ],
-      [
-        "PR #1126",
-        "https://github.com/NevronCore/nevron-core/pull/1126"
-      ],
-      [
-        "PR #1103",
-        "https://github.com/NevronCore/nevron-core/pull/1103"
-      ],
-      [
-        "PR #1199",
-        "https://github.com/NevronCore/nevron-core/pull/1199"
+        "PR #1328",
+        "https://github.com/NevronCore/nevron-core/pull/1328"
       ]
     ]
   },
-  "scraper-ratings": {
-    "title": "Hotels built from a website get their review links and a Ratings page",
+  "new-chat-live": {
+    "title": "Website chat, Telegram, WhatsApp and the guest app now use the new chat engine",
     "tags": [
       [
         "surface",
-        "Nevron sales"
+        "AI concierge"
+      ],
+      [
+        "surface",
+        "Guest app"
       ],
       [
         "surface",
@@ -1168,44 +675,139 @@
         "In QA"
       ]
     ],
-    "how": "Each review link becomes a card on the guest Ratings page; unknown sites are skipped and reported, not refused. Item prices arrive as structured fields — amount, “from” and unit — always in the hotel's currency. A one-time update adds the Ratings tile to demo hotels that were already built. Building two hotels in parallel is behind a switch that only turns on when the server is large enough.",
-    "use": "Sales generates a demo for a 120-room hotel. The guest app already shows the hotel's real Booking.com and Google review links on the Ratings page.",
+    "how": "Prices in answers come from the hotel's real items and are written in by the system, not by the AI. On the website, the answer appears word by word as it is written. If the new engine does not respond within 10 seconds, the old one answers, so no visitor is left waiting. Messaging drafts know the guest and their stay when the chat is linked to a staying guest. The AI notice (“I'm the AI assistant”) is set per platform, with a new notice-only option.",
+    "use": "A website visitor asks about a family room. The answer streams in at once, with the real price and the hotel's own booking link.",
     "who": [
       [
+        "guest",
+        "Guests and visitors",
+        "Faster, more truthful answers on whichever channel they use."
+      ],
+      [
+        "staff",
+        "Hotels",
+        "Better reply drafts for messaging, including Messenger and Instagram."
+      ],
+      [
         "nevron",
-        "Nevron sales",
-        "More complete demo hotels, built faster."
+        "Nevron",
+        "One engine to maintain and measure instead of two."
       ]
     ],
     "refs": [
       [
-        "PR #1108",
-        "https://github.com/NevronCore/nevron-core/pull/1108"
+        "PR #1331",
+        "https://github.com/NevronCore/nevron-core/pull/1331"
       ],
       [
-        "PR #1112",
-        "https://github.com/NevronCore/nevron-core/pull/1112"
+        "PR #1343",
+        "https://github.com/NevronCore/nevron-core/pull/1343"
       ],
       [
-        "PR #1107",
-        "https://github.com/NevronCore/nevron-core/pull/1107"
+        "PR #1421",
+        "https://github.com/NevronCore/nevron-core/pull/1421"
       ],
       [
-        "PR #1215",
-        "https://github.com/NevronCore/nevron-core/pull/1215"
+        "PR #1345",
+        "https://github.com/NevronCore/nevron-core/pull/1345"
       ],
       [
-        "PR #1150",
-        "https://github.com/NevronCore/nevron-core/pull/1150"
+        "PR #1333",
+        "https://github.com/NevronCore/nevron-core/pull/1333"
       ],
       [
-        "PR #1210",
-        "https://github.com/NevronCore/nevron-core/pull/1210"
+        "PR #1383",
+        "https://github.com/NevronCore/nevron-core/pull/1383"
+      ],
+      [
+        "PR #1442",
+        "https://github.com/NevronCore/nevron-core/pull/1442"
       ]
     ]
   },
-  "review-management": {
-    "title": "Review Management reads real review data",
+  "chat-language": {
+    "title": "The chat answers in the language the guest writes in",
+    "tags": [
+      [
+        "surface",
+        "AI concierge"
+      ],
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The chat starts in the app or reservation language. It switches only when a message has at least three words and the checks agree. When unsure (short messages, room numbers, dish names), it keeps the current language. If the guest asks for a language the hotel does not offer, it says which ones are offered. The app's own language and the reservation language do not change.",
+    "use": "A German guest uses the app in English but types a question in German. The chat answers in German and stays in German for the rest of the conversation.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "They can write in their own language without changing settings."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1388",
+        "https://github.com/NevronCore/nevron-core/pull/1388"
+      ],
+      [
+        "PR #1393",
+        "https://github.com/NevronCore/nevron-core/pull/1393"
+      ],
+      [
+        "PR #1443",
+        "https://github.com/NevronCore/nevron-core/pull/1443"
+      ]
+    ]
+  },
+  "chat-my-room": {
+    "title": "The chat can open My Room actions with a button",
+    "tags": [
+      [
+        "surface",
+        "AI concierge"
+      ],
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The answer names the action in words. The app adds the matching button below the answer, so the AI never claims a button that the item does not have.",
+    "use": "A guest writes “no cleaning today, please”. The chat confirms the option and shows a button that opens Skip cleaning.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "One tap from question to action."
+      ],
+      [
+        "staff",
+        "Hotels",
+        "Fewer requests that need a person to answer."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1401",
+        "https://github.com/NevronCore/nevron-core/pull/1401"
+      ],
+      [
+        "PR #1382",
+        "https://github.com/NevronCore/nevron-core/pull/1382"
+      ]
+    ]
+  },
+  "kb-how-we-read": {
+    "title": "Staff can see how the AI read a hotel guide, and correct it",
     "tags": [
       [
         "surface",
@@ -1213,6 +815,335 @@
       ],
       [
         "surface",
+        "AI concierge"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The guide page shows the sections on the left and the facts the AI took from each section on the right. Sections with scrambled text show a warning. A correction cannot change a price, time, phone number or email that is written in the guide. Other languages follow the fix automatically. A new version of the guide keeps the fixes for sections that did not change.",
+    "use": "The AI read “breakfast 7–10” from an old line in the guide. The manager hides that line, and the assistant stops repeating it.",
+    "who": [
+      [
+        "staff",
+        "Hotels",
+        "Control over what the assistant says, without a support ticket."
+      ],
+      [
+        "guest",
+        "Guests",
+        "Fewer wrong answers from old or badly scanned guides."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1242",
+        "https://github.com/NevronCore/nevron-core/pull/1242"
+      ],
+      [
+        "PR #1251",
+        "https://github.com/NevronCore/nevron-core/pull/1251"
+      ],
+      [
+        "PR #1282",
+        "https://github.com/NevronCore/nevron-core/pull/1282"
+      ]
+    ]
+  },
+  "manager-settings": {
+    "title": "Manager Settings becomes 7 tabs with search",
+    "tags": [
+      [
+        "surface",
+        "Admin panel"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "Before, a save could rewrite the settings from an old copy, so a change made a moment earlier could be lost while the screen still said “saved”. Now each save reads the real record and waits for any other save to finish. When a save is refused, the message names the field that caused it.",
+    "use": "A manager types “checkout” in the search, goes straight to the right tab, changes the time and saves only that tab.",
+    "who": [
+      [
+        "staff",
+        "Hotel managers",
+        "Settings are faster to find, and a saved change stays saved."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1402",
+        "https://github.com/NevronCore/nevron-core/pull/1402"
+      ]
+    ]
+  },
+  "pulse-check": {
+    "title": "Guest Pulse Check: short questions during the stay, with staff alerts",
+    "tags": [
+      [
+        "surface",
+        "In-room TV"
+      ],
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "surface",
+        "Admin panel"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "Staff choose the moments and the questions. Alerts arrive in the staff bell and by email. Settings sit in a new Pulse card on the Service and staff tab. Answers also feed analytics.",
+    "use": "A guest answers “not good” after check-in because the room was not ready. The duty manager gets an alert and calls the room before the guest writes a review.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "A problem gets fixed during the stay, not after it."
+      ],
+      [
+        "staff",
+        "Hotels",
+        "Early warning, before a bad review is written."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "A strong feature for the guest-experience sales pitch."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1404",
+        "https://github.com/NevronCore/nevron-core/pull/1404"
+      ]
+    ]
+  },
+  "translations-refresh": {
+    "title": "Translations update when the main text changes",
+    "tags": [
+      [
+        "surface",
+        "Admin panel"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "Translations that staff wrote by hand are kept. Only machine translations are refreshed. The admin panel also shows the hotel's main language, and changing it now really moves the hotel's texts.",
+    "use": "Reception changes the spa opening hours in Slovenian. The English, German and Croatian versions follow, and no guest sees the old hours.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "The same, current information in every language."
+      ],
+      [
+        "staff",
+        "Hotels",
+        "No need to edit every language by hand."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1253",
+        "https://github.com/NevronCore/nevron-core/pull/1253"
+      ],
+      [
+        "PR #1254",
+        "https://github.com/NevronCore/nevron-core/pull/1254"
+      ],
+      [
+        "PR #1255",
+        "https://github.com/NevronCore/nevron-core/pull/1255"
+      ],
+      [
+        "PR #1302",
+        "https://github.com/NevronCore/nevron-core/pull/1302"
+      ]
+    ]
+  },
+  "inspections": {
+    "title": "Inspections with checklists on the crew phone",
+    "tags": [
+      [
+        "surface",
+        "Staff app"
+      ],
+      [
+        "surface",
+        "Admin panel"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "Starter packs give a hotel ready-made checklists to begin with. Recurring inspections arrive with their lines already filled in. The crew screen was also repaired: labels show, and the Pass and Fail buttons are no longer covered.",
+    "use": "A supervisor sets a daily “cabin turnover” inspection. Each morning the crew member gets it with the checklist and ticks Pass or Fail per line.",
+    "who": [
+      [
+        "staff",
+        "Crew and supervisors",
+        "Clear checks and a record of what failed."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1400",
+        "https://github.com/NevronCore/nevron-core/pull/1400"
+      ],
+      [
+        "PR #1399",
+        "https://github.com/NevronCore/nevron-core/pull/1399"
+      ]
+    ]
+  },
+  "boarding-day": {
+    "title": "A boarding day board for supervisors",
+    "tags": [
+      [
+        "surface",
+        "Staff app"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "Tap a stage to see its cabins, tap a cabin to open its details. The board updates itself at most once every 15 seconds. When a different person signs in on the same phone, the board is cleared, so guest names do not carry over.",
+    "use": "Two hours before boarding, the head of housekeeping sees that 40 cabins still wait for cleaning and moves crew to that deck.",
+    "who": [
+      [
+        "staff",
+        "Supervisors",
+        "One screen that shows if the ship will be ready on time."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1413",
+        "https://github.com/NevronCore/nevron-core/pull/1413"
+      ],
+      [
+        "PR #1441",
+        "https://github.com/NevronCore/nevron-core/pull/1441"
+      ],
+      [
+        "PR #1440",
+        "https://github.com/NevronCore/nevron-core/pull/1440"
+      ]
+    ]
+  },
+  "site-installer": {
+    "title": "A guided installer for a hotel or ship server",
+    "tags": [
+      [
+        "surface",
+        "Ship server"
+      ],
+      [
+        "surface",
+        "Under the hood"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The installer shows a summary and a rehearsal first. It installs what it needs, opens the firewall and moves data to the big disk when the main disk is small. It also works fully offline from a USB stick, and has an unattended mode for fleets. New in the same package: automatic HTTPS certificates, database connection pooling, and an opt-in log and health add-on for boxes with no internet.",
+    "use": "A technician on a ship answers the questions, checks the summary, types yes, and the server is up without a Nevron developer on the phone.",
+    "who": [
+      [
+        "nevron",
+        "Nevron",
+        "Installations that do not need a developer, which makes the on-site product scalable."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1359",
+        "https://github.com/NevronCore/nevron-core/pull/1359"
+      ],
+      [
+        "PR #1406",
+        "https://github.com/NevronCore/nevron-core/pull/1406"
+      ],
+      [
+        "PR #1360",
+        "https://github.com/NevronCore/nevron-core/pull/1360"
+      ],
+      [
+        "PR #1387",
+        "https://github.com/NevronCore/nevron-core/pull/1387"
+      ],
+      [
+        "PR #1259",
+        "https://github.com/NevronCore/nevron-core/pull/1259"
+      ],
+      [
+        "PR #1269",
+        "https://github.com/NevronCore/nevron-core/pull/1269"
+      ],
+      [
+        "PR #1344",
+        "https://github.com/NevronCore/nevron-core/pull/1344"
+      ]
+    ]
+  },
+  "axon-changeover": {
+    "title": "Tools to move a ship from Axon to Nevron Core",
+    "tags": [
+      [
+        "surface",
+        "Ship server"
+      ],
+      [
+        "surface",
+        "Admin panel"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The export runs read-only on the Axon server and writes one file. The import does a dry run first and only writes when asked. It is safe to run again: nothing is created twice, and staff edits are kept unless Axon changed the same item.",
+    "use": "Before a ship's changeover, the team runs a dry import, checks the report, then imports for real and the cabins come up with their familiar channels and screens.",
+    "who": [
+      [
+        "nevron",
+        "Nevron",
+        "A repeatable path for every Axon ship, not a one-off project."
+      ],
+      [
+        "guest",
+        "Guests",
+        "The same channels and screens they know after the switch."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1273",
+        "https://github.com/NevronCore/nevron-core/pull/1273"
+      ],
+      [
+        "PR #1275",
+        "https://github.com/NevronCore/nevron-core/pull/1275"
+      ]
+    ]
+  },
+  "mews": {
+    "title": "MEWS connection made safer, and the certification pack is ready",
+    "tags": [
+      [
+        "surface",
         "Integrations"
       ],
       [
@@ -1220,28 +1151,177 @@
         "In QA"
       ]
     ],
-    "how": "Every connector uses the real addresses, field names, rating scales (Expedia and Trip.com rate out of 10) and date formats. Dates are stored using the hotel's own time zone. The first import fetches the full history and keeps the pages it already has if a later page fails. Duplicate protection no longer compares fields that the two providers write differently.",
-    "use": "A hotel connects Booking.com and Tripadvisor. The first import brings in its full review history with correct ratings and dates.",
+    "how": "Staff press Post or Retry on the held order once the MEWS connection is active again. The existing double-charge protections stay the same. MEWS notices now find their hotel at any hotel count, and the connector uses MEWS's current operations with less API traffic. The listing, hotel guide and form answers for MEWS certification are written.",
+    "use": "A hotel's MEWS link drops for an hour. A room-service charge waits. After the reconnect, reception posts it, and it appears on the guest's bill.",
     "who": [
       [
         "staff",
         "Hotels",
-        "All their reviews in one place, with correct scores."
+        "No lost charges, and no guest billed twice."
       ],
       [
         "nevron",
         "Nevron",
-        "Lower daily data cost per hotel."
+        "A step closer to being a certified MEWS partner."
       ]
     ],
     "refs": [
       [
-        "PR #1171",
-        "https://github.com/NevronCore/nevron-core/pull/1171"
+        "PR #1287",
+        "https://github.com/NevronCore/nevron-core/pull/1287"
       ],
       [
-        "PR #1192",
-        "https://github.com/NevronCore/nevron-core/pull/1192"
+        "PR #1265",
+        "https://github.com/NevronCore/nevron-core/pull/1265"
+      ],
+      [
+        "PR #1320",
+        "https://github.com/NevronCore/nevron-core/pull/1320"
+      ],
+      [
+        "PR #1321",
+        "https://github.com/NevronCore/nevron-core/pull/1321"
+      ],
+      [
+        "PR #1348",
+        "https://github.com/NevronCore/nevron-core/pull/1348"
+      ],
+      [
+        "PR #1266",
+        "https://github.com/NevronCore/nevron-core/pull/1266"
+      ],
+      [
+        "PR #1288",
+        "https://github.com/NevronCore/nevron-core/pull/1288"
+      ]
+    ]
+  },
+  "faster-start": {
+    "title": "The guest app opens faster and recovers from a bad connection",
+    "tags": [
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "The side menu loads after the home screen. Item cards are lighter, and list pages read the database once per page instead of once per item. A size limit now stops a build that makes the start-up page too big again.",
+    "use": "A guest opens the app on weak hotel Wi-Fi. The home screen appears sooner, and a dropped connection does not leave them on an empty page.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "A quicker, more reliable first impression."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1285",
+        "https://github.com/NevronCore/nevron-core/pull/1285"
+      ],
+      [
+        "PR #1317",
+        "https://github.com/NevronCore/nevron-core/pull/1317"
+      ],
+      [
+        "PR #1286",
+        "https://github.com/NevronCore/nevron-core/pull/1286"
+      ],
+      [
+        "PR #1303",
+        "https://github.com/NevronCore/nevron-core/pull/1303"
+      ],
+      [
+        "PR #1380",
+        "https://github.com/NevronCore/nevron-core/pull/1380"
+      ],
+      [
+        "PR #1307",
+        "https://github.com/NevronCore/nevron-core/pull/1307"
+      ],
+      [
+        "PR #1323",
+        "https://github.com/NevronCore/nevron-core/pull/1323"
+      ]
+    ]
+  },
+  "account-deletion": {
+    "title": "Deleting a guest account works end to end",
+    "tags": [
+      [
+        "surface",
+        "Guest app"
+      ],
+      [
+        "qa",
+        "In QA"
+      ]
+    ],
+    "how": "A guest who tries to sign up again with an email that is waiting for deletion is pointed to the cancel link. Going back after a deletion opens a fresh sign-in, not an old code screen.",
+    "use": "A guest deletes their account by mistake, opens the email, presses Cancel, and keeps their account.",
+    "who": [
+      [
+        "guest",
+        "Guests",
+        "A deletion they can trust and undo."
+      ],
+      [
+        "nevron",
+        "Nevron",
+        "Fewer reasons for the app stores to reject the app."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1363",
+        "https://github.com/NevronCore/nevron-core/pull/1363"
+      ],
+      [
+        "PR #1353",
+        "https://github.com/NevronCore/nevron-core/pull/1353"
+      ],
+      [
+        "PR #1327",
+        "https://github.com/NevronCore/nevron-core/pull/1327"
+      ],
+      [
+        "PR #1371",
+        "https://github.com/NevronCore/nevron-core/pull/1371"
+      ]
+    ]
+  },
+  "narrated-tests": {
+    "title": "Testers can talk through a phone recording and get draft bug cards",
+    "tags": [
+      [
+        "surface",
+        "Under the hood"
+      ]
+    ],
+    "how": "The PREPROD guest and staff apps also have a one-button test session, and the tool joins the app's logs to the session. Nothing in the apps changes for guests.",
+    "use": "A tester walks through room service on a phone and says “this price is wrong”. The tool makes a draft card with the screenshot and the request log for that moment.",
+    "who": [
+      [
+        "nevron",
+        "Nevron",
+        "Faster, more precise bug reports from testing on real phones."
+      ]
+    ],
+    "refs": [
+      [
+        "PR #1407",
+        "https://github.com/NevronCore/nevron-core/pull/1407"
+      ],
+      [
+        "PR #1408",
+        "https://github.com/NevronCore/nevron-core/pull/1408"
+      ],
+      [
+        "PR #1410",
+        "https://github.com/NevronCore/nevron-core/pull/1410"
       ]
     ]
   }
